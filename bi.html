@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serviços de BI | Caio Teodoro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #05070C;
+  --bg-2:     #0B0F18;
+  --panel:    #10141F;
+  --ink:      #F4F6FA;
+  --ink-2:    #9BA4B5;
+  --ink-3:    #5C6478;
+  --line:     #1E2330;
+  --electric: #2D7FFF;
+  --electric-2: #5B9AFF;
+  --electric-dim: rgba(45,127,255,0.12);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.condensed { font-family: 'Archivo', 'Inter', sans-serif; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+nav.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(5,7,12,0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+nav.topbar .wrap-wide { display: flex; align-items: center; justify-content: space-between; }
+.brand-mark {
+  font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 15px;
+  letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase;
+}
+.brand-mark span { color: var(--electric); }
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a {
+  font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--ink-2); transition: color 0.15s; position: relative;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a.is-active { color: var(--ink); }
+.nav-links a.is-active::after {
+  content: ''; position: absolute; bottom: -16px; left: 0; right: 0; height: 2px; background: var(--electric);
+}
+
+.hero { padding: 168px 0 90px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; top: -200px; right: -150px; width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--electric-dim) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+.hero-avatar {
+  width: 168px; height: 168px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  border: 3px solid var(--electric); box-shadow: 0 0 0 6px rgba(45,127,255,0.08);
+}
+.hero-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.status-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--electric-2); margin-bottom: 16px;
+  background: var(--electric-dim); padding: 6px 14px; border-radius: 100px;
+  border: 1px solid rgba(45,127,255,0.25);
+}
+.status-dot { width: 6px; height: 6px; background: #3DDC97; border-radius: 50%; box-shadow: 0 0 8px #3DDC97; }
+h1.hero-title {
+  font-family: 'Archivo', sans-serif; font-weight: 800; font-style: normal;
+  font-size: clamp(40px, 6vw, 68px); line-height: 0.96; letter-spacing: -0.025em;
+  text-transform: uppercase; color: var(--ink);
+}
+h1.hero-title em { font-style: normal; color: var(--electric); }
+.hero-role {
+  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--ink-2); margin: 14px 0 18px;
+}
+.hero-tagline { font-size: 15.5px; color: var(--ink-2); line-height: 1.8; max-width: 420px; margin-bottom: 26px; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn-fill {
+  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  color: #05070C; background: var(--electric);
+  padding: 13px 26px; border-radius: 4px; transition: background 0.15s, transform 0.15s;
+  display: inline-block; border: none;
+}
+.btn-fill:hover { background: var(--electric-2); color: #05070C; transform: translateY(-1px); }
+.btn-line {
+  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--ink); background: transparent;
+  padding: 12px 26px; border-radius: 4px; border: 1px solid var(--line);
+  transition: border-color 0.15s, color 0.15s; display: inline-block;
+}
+.btn-line:hover { border-color: var(--electric); color: var(--electric-2); }
+
+section { padding: 92px 0; border-top: 1px solid var(--line); }
+.section-panel { background: var(--bg-2); }
+
+.kicker {
+  font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.16em; color: var(--electric); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.kicker::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.sec-title {
+  font-family: 'Archivo', sans-serif; font-weight: 800; text-transform: uppercase;
+  font-size: clamp(26px, 3.6vw, 38px); letter-spacing: -0.015em; line-height: 1.05;
+  color: var(--ink); max-width: 18ch; margin-bottom: 36px;
+}
+
+.body-text p {
+  font-size: 15.5px; color: var(--ink-2); line-height: 1.9; max-width: 62ch; margin-bottom: 1.1em;
+}
+.body-text p:last-child { margin-bottom: 0; }
+.body-text strong { color: var(--ink); font-weight: 700; }
+
+.stat-strip { display: flex; gap: 44px; margin: 28px 0 8px; flex-wrap: wrap; }
+.stat-num { font-family: 'Archivo', sans-serif; font-size: 30px; font-weight: 800; color: var(--electric-2); letter-spacing: -0.02em; }
+.stat-label { font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.tag {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+  color: var(--electric-2); background: var(--electric-dim); border: 1px solid rgba(45,127,255,0.2);
+  border-radius: 4px; padding: 5px 12px;
+}
+
+.list-clean { list-style: none; }
+.list-row { display: grid; grid-template-columns: 64px 1fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); }
+.list-row:first-child { border-top: none; padding-top: 0; }
+.list-row-num { font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 800; color: var(--electric); padding-top: 2px; }
+.list-row-title { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.list-row-desc { font-size: 14px; color: var(--ink-2); line-height: 1.8; max-width: 56ch; }
+
+.card-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+.card-bold {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+  padding: 28px 26px; transition: border-color 0.15s, transform 0.15s;
+}
+.card-bold:hover { border-color: var(--electric); transform: translateY(-2px); }
+.card-bold h3 {
+  font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--electric-2); margin-bottom: 12px;
+}
+.card-bold p { font-size: 14px; color: var(--ink-2); line-height: 1.8; }
+
+.pkg-row {
+  border-top: 1px solid var(--line); padding: 30px 0;
+  display: grid; grid-template-columns: 200px 1fr auto; gap: 28px; align-items: start;
+}
+.pkg-row:first-child { border-top: none; }
+.pkg-row.featured { background: var(--electric-dim); margin: 0 -28px; padding: 30px 28px; border-radius: 6px; border-top: none; }
+.pkg-name { font-family: 'Archivo', sans-serif; font-size: 19px; font-weight: 800; text-transform: uppercase; }
+.pkg-badge {
+  display: inline-block; font-size: 10px; font-weight: 800; text-transform: uppercase;
+  color: #05070C; background: var(--electric); padding: 3px 8px; border-radius: 3px; margin-bottom: 8px;
+}
+.pkg-list { list-style: none; font-size: 13.5px; color: var(--ink-2); }
+.pkg-list li { padding: 4px 0; }
+.pkg-list li::before { content: '— '; color: var(--electric); }
+.pkg-price { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--electric-2); white-space: nowrap; }
+.pkg-price span { display: block; font-family: 'Inter', sans-serif; font-size: 10.5px; color: var(--ink-3); font-weight: 500; margin-top: 2px; text-transform: none; }
+
+form.bold-form { display: grid; gap: 20px; max-width: 660px; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field label {
+  display: block; font-size: 11px; font-weight: 700; color: var(--ink-3); letter-spacing: 0.06em;
+  margin-bottom: 9px; text-transform: uppercase;
+}
+.field input, .field select, .field textarea {
+  width: 100%; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--panel); padding: 12px 14px; font-size: 14.5px; color: var(--ink);
+  font-family: 'Inter', sans-serif;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--electric); box-shadow: 0 0 0 3px var(--electric-dim);
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--ink-3); }
+.field textarea { resize: vertical; min-height: 88px; }
+.form-submit-row { display: flex; align-items: center; gap: 18px; margin-top: 4px; flex-wrap: wrap; }
+.form-helper { font-size: 12px; color: var(--ink-3); }
+.confirm-msg {
+  display: none; font-size: 13.5px; color: var(--electric-2);
+  border-left: 2px solid var(--electric); padding-left: 14px; margin-top: 4px;
+}
+.confirm-msg.show { display: block; }
+
+.contact-row { display: flex; align-items: center; gap: 12px; font-size: 16px; color: var(--ink-2); }
+.contact-row a { color: var(--ink); border-bottom: 1px solid var(--electric); padding-bottom: 1px; transition: color 0.15s; }
+.contact-row a:hover { color: var(--electric-2); }
+
+footer.site-footer { padding: 26px 0; color: var(--ink-3); font-size: 12px; border-top: 1px solid var(--line); }
+footer.site-footer .wrap-wide { display: flex; justify-content: space-between; align-items: center; }
+footer.site-footer a { color: var(--ink-2); }
+footer.site-footer a:hover { color: var(--electric-2); }
+
+@media (max-width: 760px) {
+  .hero-inner { flex-direction: column; align-items: flex-start; text-align: left; }
+  .hero { padding: 130px 0 60px; }
+  section { padding: 56px 0; }
+  .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .pkg-row { grid-template-columns: 1fr; }
+  .pkg-row.featured { margin: 0; }
+  nav.topbar .nav-links { gap: 16px; }
+  .stat-strip { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap-wide">
+    <a href="index.html" class="brand-mark">Caio Teodoro <span>// BI</span></a>
+    <div class="nav-links">
+      <a href="index.html">Portfólio</a>
+      <a href="bi.html" class="is-active">BI</a>
+      <a href="curriculos.html">Currículos</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap-wide" style="display:block;">
+    <div class="status-pill"><span class="status-dot"></span>Serviços de BI</div>
+    <h1 class="hero-title" style="max-width:17ch;">Dados que sustentam <em>decisão</em></h1>
+    <p class="hero-tagline" style="max-width:520px; font-size:16px; margin-top:20px;">Construo soluções de Business Intelligence pensadas para quem decide: modelagem correta, governança de acesso e um painel que entrega contexto, não apenas indicadores soltos.</p>
+    <div class="hero-cta">
+      <a href="#contato" class="btn-fill">Solicitar proposta</a>
+      <a href="#servicos" class="btn-line">Ver serviços</a>
+    </div>
+  </div>
+</header>
+
+<section id="servicos">
+  <div class="wrap-wide">
+    <div class="kicker">01 — O que eu faço</div>
+    <div class="sec-title">Cinco frentes conectadas</div>
+    <ul class="list-clean">
+      <li class="list-row">
+        <div class="list-row-num">01</div>
+        <div>
+          <div class="list-row-title">Dashboards e relatórios em Power BI</div>
+          <div class="list-row-desc">Painéis pensados para quem vai usar no dia a dia: supervisores, coordenadores e gerentes que precisam de resposta rápida, não de planilha disfarçada de dashboard.</div>
+        </div>
+      </li>
+      <li class="list-row">
+        <div class="list-row-num">02</div>
+        <div>
+          <div class="list-row-title">Modelagem de dados e DAX</div>
+          <div class="list-row-desc">Modelo semântico bem estruturado por trás do painel, com medidas DAX otimizadas para performance e manutenção, não fórmulas remendadas.</div>
+        </div>
+      </li>
+      <li class="list-row">
+        <div class="list-row-num">03</div>
+        <div>
+          <div class="list-row-title">Governança e controle de acesso (RLS)</div>
+          <div class="list-row-desc">Row Level Security por perfil de usuário, garantindo que cada pessoa veja exatamente o que precisa ver, sem expor dado sensível de outras áreas ou regionais.</div>
+        </div>
+      </li>
+      <li class="list-row">
+        <div class="list-row-num">04</div>
+        <div>
+          <div class="list-row-title">Documentação de modelo com IA</div>
+          <div class="list-row-desc">Documentação técnica do modelo semântico gerada com apoio de inteligência artificial, facilitando manutenção futura e onboarding de novos usuários do painel.</div>
+        </div>
+      </li>
+      <li class="list-row">
+        <div class="list-row-num">05</div>
+        <div>
+          <div class="list-row-title">Tracking e rastreabilidade operacional</div>
+          <div class="list-row-desc">Acompanhamento de indicadores operacionais (SLA, backlog, ordens de produção) com a mesma precisão que venho aplicando há anos em campo, agora traduzida para dados.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-panel">
+  <div class="wrap-wide">
+    <div class="kicker">02 — Para quem</div>
+    <div class="sec-title">Funciona em três cenários</div>
+    <div class="card-grid-3">
+      <div class="card-bold">
+        <h3>Sem BI estruturado</h3>
+        <p>Você ainda decide com base em planilha solta ou relatório manual. Eu construo a base do zero, com modelo de dados correto desde o início.</p>
+      </div>
+      <div class="card-bold">
+        <h3>Sem governança</h3>
+        <p>O painel existe, mas todo mundo vê tudo. Eu implemento controle de acesso por perfil sem precisar refazer o que já funciona.</p>
+      </div>
+      <div class="card-bold">
+        <h3>Crescimento de usuários</h3>
+        <p>O BI vai escalar para mais times ou regionais e precisa de documentação e estrutura que sustentem esse crescimento sem virar caos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-wide">
+    <div class="kicker">03 — Investimento</div>
+    <div class="sec-title">Pacotes de referência</div>
+    <p style="font-size:14px; color:var(--ink-3); margin-bottom:8px; max-width:60ch;">Os valores abaixo são uma referência inicial. O escopo final é ajustado após entender a complexidade dos dados e o número de usuários do seu projeto.</p>
+
+    <div class="pkg-row">
+      <div class="pkg-name">Dashboard único</div>
+      <ul class="pkg-list">
+        <li>1 dashboard em Power BI</li>
+        <li>Modelagem de dados da fonte enviada</li>
+        <li>Até 5 medidas DAX</li>
+        <li>1 rodada de ajuste</li>
+      </ul>
+      <div class="pkg-price">R$ 600<span>a partir de</span></div>
+    </div>
+    <div class="pkg-row featured">
+      <div>
+        <span class="pkg-badge">Mais pedido</span>
+        <div class="pkg-name">BI corporativo</div>
+      </div>
+      <ul class="pkg-list">
+        <li>Modelagem completa do projeto</li>
+        <li>Múltiplos dashboards conectados</li>
+        <li>Row Level Security por perfil</li>
+        <li>Documentação do modelo semântico</li>
+        <li>3 rodadas de ajuste</li>
+      </ul>
+      <div class="pkg-price">R$ 1.800<span>a partir de</span></div>
+    </div>
+    <div class="pkg-row">
+      <div class="pkg-name">Diagnóstico</div>
+      <ul class="pkg-list">
+        <li>Análise do BI ou processo atual</li>
+        <li>Relatório de gaps e riscos</li>
+        <li>Recomendação de estrutura ideal</li>
+      </ul>
+      <div class="pkg-price">R$ 450<span>a partir de</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-panel" id="contato">
+  <div class="wrap-wide">
+    <div class="kicker">04 — Solicitar</div>
+    <div class="sec-title">Conte um pouco sobre seu projeto</div>
+    <p style="font-size:14.5px; color:var(--ink-2); max-width:56ch; margin-bottom:36px;">Preencha o formulário com o máximo de detalhe possível. Retorno em até 1 dia útil com uma proposta ajustada ao seu caso.</p>
+
+    <form class="bold-form" id="biForm">
+      <div class="form-row-2">
+        <div class="field">
+          <label>Nome</label>
+          <input type="text" name="nome" required>
+        </div>
+        <div class="field">
+          <label>E-mail ou WhatsApp</label>
+          <input type="text" name="contato" placeholder="seu@email.com ou (11) 99999-9999" required>
+        </div>
+      </div>
+
+      <div class="form-row-2">
+        <div class="field">
+          <label>Empresa / segmento</label>
+          <input type="text" name="empresa" placeholder="Ex: Indústria, Agro, Transporte...">
+        </div>
+        <div class="field">
+          <label>Serviço de interesse</label>
+          <select name="servico">
+            <option value="dashboard" selected>Dashboard único</option>
+            <option value="bi-corporativo">BI Corporativo completo</option>
+            <option value="diagnostico">Consultoria de diagnóstico</option>
+            <option value="nao-sei">Ainda não sei, quero orientação</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Descreva o problema ou objetivo</label>
+        <textarea name="detalhes" placeholder="Ex: temos dados em planilhas separadas e queremos um painel único para a diretoria acompanhar vendas..."></textarea>
+      </div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="btn-fill" style="border:none; cursor:pointer;">Enviar solicitação</button>
+        <span class="form-helper">Seus dados são usados apenas para retorno deste contato.</span>
+      </div>
+
+      <div class="confirm-msg" id="confirmBox">Solicitação recebida. Vou analisar seu projeto e retorno em até 1 dia útil com uma proposta.</div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap-wide">
+    <span>© 2026 Caio Teodoro</span>
+    <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank">linkedin.com/in/caiobarbosateodoro</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('biForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('confirmBox').classList.add('show');
+  this.reset();
+});
+</script>
+</body>
+</html>
