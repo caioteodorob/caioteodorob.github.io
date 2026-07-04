@@ -9,17 +9,17 @@
 
 <!-- IMPORTANTE: troque a constante SITE_URL abaixo pelo domínio real do site
      (ex.: https://usuario.github.io/repo) para a prévia de link funcionar. -->
-<link rel="canonical" href="https://caioteodorob.github.io//index.html">
+<link rel="canonical" href="https://seu-usuario.github.io/index.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Caio Teodoro | Analista Operacional & BI">
 <meta property="og:description" content="Portfólio de Caio Teodoro, Analista Operacional e de BI. Soluções em Power BI, tracking e governança de dados para decisão baseada em contexto.">
-<meta property="og:url" content="https://caioteodorob.github.io//index.html">
-<meta property="og:image" content="https://caioteodorob.github.io//assets/og-cover.png">
+<meta property="og:url" content="https://seu-usuario.github.io/index.html">
+<meta property="og:image" content="https://seu-usuario.github.io/assets/og-cover.png">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Caio Teodoro | Analista Operacional & BI">
 <meta name="twitter:description" content="Portfólio de Caio Teodoro, Analista Operacional e de BI. Soluções em Power BI, tracking e governança de dados para decisão baseada em contexto.">
-<meta name="twitter:image" content="https://caioteodorob.github.io//assets/og-cover.png">
+<meta name="twitter:image" content="https://seu-usuario.github.io/assets/og-cover.png">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,28 +39,38 @@
       <a href="index.html" class="is-active">Portfólio</a>
       <a href="bi.html">BI</a>
       <a href="curriculos.html">Currículos</a>
+      <a href="#dashboard">Dashboard</a>
       <a href="#contato">Contato</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="wrap-wide" style="display:flex; align-items:center; gap:48px; flex-wrap:wrap; position:relative; z-index:1;">
-    <div class="hero-avatar">
-      <picture>
-        <source srcset="assets/avatar.webp" type="image/webp">
-        <img src="assets/avatar.jpg" alt="Caio Teodoro" width="168" height="168" loading="eager">
-      </picture>
-    </div>
-    <div>
-      <div class="status-pill"><span class="status-dot"></span>Disponível para novos projetos</div>
-      <h1 class="hero-title">Caio <em>Teodoro</em></h1>
-      <div class="hero-role">Analista Operacional / BI</div>
-      <p class="hero-tagline">Operação, tracking e BI. Trabalho para que a decisão certa chegue para quem precisa tomar.</p>
-      <div class="hero-cta">
-        <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank" rel="noopener" class="btn-fill">LinkedIn</a>
-        <a href="#sobre" class="btn-line">Sobre mim</a>
+  <div class="wrap-wide" style="position:relative; z-index:1;">
+    <div style="display:flex; align-items:center; gap:48px; flex-wrap:wrap;">
+      <div class="hero-avatar">
+        <picture>
+          <source srcset="assets/avatar.webp" type="image/webp">
+          <img src="assets/avatar.jpg" alt="Caio Teodoro" width="168" height="168" loading="eager">
+        </picture>
       </div>
+      <div style="flex:1; min-width:300px;">
+        <div class="status-pill"><span class="status-dot"></span>Disponível para novos projetos</div>
+        <h1 class="hero-title">Caio <em>Teodoro</em></h1>
+        <div class="hero-role">Analista Operacional &amp; BI · BI e Tracking</div>
+        <p class="hero-tagline">Transformo operação e tracking em painéis que supervisão, coordenação e gerência usam para decidir com contexto, não com planilha solta.</p>
+        <div class="hero-cta">
+          <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank" rel="noopener" class="btn-fill">LinkedIn</a>
+          <a href="#sobre" class="btn-line">Sobre mim</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-strip" style="margin-top:52px; padding-top:30px; border-top:1px solid var(--line);">
+      <div><div class="stat-num">3 anos</div><div class="stat-label">em BI e tracking</div></div>
+      <div><div class="stat-num">+50</div><div class="stat-label">usuários ativos atendidos</div></div>
+      <div><div class="stat-num">RLS</div><div class="stat-label">governança por perfil</div></div>
+      <div><div class="stat-num">Power BI</div><div class="stat-label">stack principal</div></div>
     </div>
   </div>
 </header>
@@ -112,9 +122,56 @@
   </div>
 </section>
 
+<section id="dashboard"><span id="dash" hidden></span>
+  <div class="wrap-wide">
+    <div class="kicker">04 — Demonstração</div>
+    <div class="sec-title">Tracking de NF e SLA</div>
+    <p class="body-text" style="max-width:60ch; margin-bottom:8px;"><span>Painel de exemplo construído em código, com dados fictícios, que reproduz a lógica de acompanhamento de notas fiscais e nível de serviço que aplico em projetos reais.</span></p>
+
+    <div style="display:flex; align-items:flex-end; gap:16px; margin:22px 0 26px; flex-wrap:wrap;">
+      <div class="field" style="margin:0;">
+        <label>Regional</label>
+        <select id="dashRegional" style="min-width:200px;">
+          <option value="Todas" selected>Todas</option>
+          <option>Sudeste</option>
+          <option>Sul</option>
+          <option>Nordeste</option>
+          <option>Centro-Oeste</option>
+        </select>
+      </div>
+      <span class="form-helper" style="padding-bottom:12px;">Dados fictícios para demonstração</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin-bottom:16px;">
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiTotal">—</div><div class="stat-label">NF emitidas (14 dias)</div></div>
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiSla">—</div><div class="stat-label">SLA médio</div></div>
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiAtraso">—</div><div class="stat-label">NF atrasadas</div></div>
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiTempo">—</div><div class="stat-label">Tempo médio de ciclo</div></div>
+    </div>
+
+    <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
+      <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">Volume de NF e SLA por dia</div>
+      <div style="position:relative; height:280px;"><canvas id="dashLinha"></canvas></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:16px;">
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
+        <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">SLA médio por regional</div>
+        <div style="position:relative; height:260px;"><canvas id="dashBarra"></canvas></div>
+      </div>
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
+        <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">Distribuição por status</div>
+        <div style="position:relative; height:260px;"><canvas id="dashRosca"></canvas></div>
+      </div>
+    </div>
+
+    <p class="form-helper" style="margin-top:18px;">Construído com Chart.js. Nenhum dado real de cliente é utilizado neste exemplo.</p>
+  </div>
+</section>
+
 <section class="section-panel">
   <div class="wrap-wide">
-    <div class="kicker">04 — Serviços</div>
+    <div class="kicker">05 — Serviços</div>
     <div class="sec-title">Trabalho sob demanda</div>
     <div class="card-grid-2">
       <a href="bi.html" class="card-bold" style="display:block;">
@@ -133,7 +190,7 @@
 
 <section id="contato">
   <div class="wrap-wide">
-    <div class="kicker">05 — Contato</div>
+    <div class="kicker">06 — Contato</div>
     <div class="sec-title">Vamos conversar</div>
     <div class="contact-row">
       <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank" rel="noopener">linkedin.com/in/caiobarbosateodoro</a>
@@ -149,5 +206,7 @@
 </footer>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+<script src="dashboard.js" defer></script>
 </body>
 </html>
