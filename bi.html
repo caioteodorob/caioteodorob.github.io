@@ -48,7 +48,8 @@
       <a href="index.html">Portfólio</a>
       <a href="bi.html" class="is-active">BI</a>
       <a href="curriculos.html">Currículos</a>
-      <a href="caso-agro.html">Estudo de caso</a>
+      <a href="#estudo-de-caso">Estudo de caso</a>
+      <a href="#dashboard">Demonstração</a>
       <a href="#contato">Contato</a>
     </div>
   </div>
@@ -131,9 +132,127 @@
   </div>
 </section>
 
+<section id="estudo-de-caso">
+  <div class="wrap-wide">
+    <div class="kicker">03 — Estudo de caso</div>
+    <div class="sec-title">Tracking no agro com governança por perfil</div>
+    <div class="body-text">
+      <p>Um caso real, resumido no formato problema, abordagem e resultado, para mostrar como eu aplico BI e tracking na prática, não só no discurso.</p>
+    </div>
+
+    <div style="margin-top:36px;">
+      <div class="list-row-title" style="color:var(--electric-2); font-family:'Archivo',sans-serif; text-transform:uppercase; font-size:12px; letter-spacing:0.06em; margin-bottom:14px;">O problema</div>
+      <div class="body-text">
+        <p>Uma operação nacional de transporte no segmento agro acompanhava notas fiscais e nível de serviço espalhados por várias regionais, tudo em planilhas separadas e atualizadas na mão. Cada área enxergava um recorte diferente do mesmo dado. O atraso só aparecia depois que o cliente cobrava, e ninguém confiava plenamente no número.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <div class="list-row-title" style="color:var(--electric-2); font-family:'Archivo',sans-serif; text-transform:uppercase; font-size:12px; letter-spacing:0.06em; margin-bottom:14px;">Como resolvi</div>
+      <ul class="list-clean">
+        <li class="list-row">
+          <div class="list-row-num">01</div>
+          <div>
+            <div class="list-row-title">Modelagem antes do visual</div>
+            <div class="list-row-desc">Estruturei o modelo semântico primeiro, com as tabelas e relações certas, para que a medida de SLA e o tracking de NF fossem confiáveis na origem, não remendados no gráfico.</div>
+          </div>
+        </li>
+        <li class="list-row">
+          <div class="list-row-num">02</div>
+          <div>
+            <div class="list-row-title">Row Level Security por perfil</div>
+            <div class="list-row-desc">Apliquei RLS para que cada usuário abrisse o mesmo painel e visse apenas a sua regional. Um único relatório serve toda a operação, sem cópia manual e sem exposição indevida.</div>
+          </div>
+        </li>
+        <li class="list-row">
+          <div class="list-row-num">03</div>
+          <div>
+            <div class="list-row-title">Documentação do modelo com IA</div>
+            <div class="list-row-desc">Documentei o modelo semântico com apoio de inteligência artificial, o que reduz o tempo de manutenção futura e facilita o onboarding de quem chega depois.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div style="margin-top:32px;">
+      <div class="list-row-title" style="color:var(--electric-2); font-family:'Archivo',sans-serif; text-transform:uppercase; font-size:12px; letter-spacing:0.06em; margin-bottom:14px;">O resultado</div>
+      <div class="body-text">
+        <p>A operação passou a decidir sobre um número único e confiável, com cada perfil vendo o recorte certo. O acompanhamento de NF e SLA deixou de depender de planilha manual e virou rotina dentro do painel.</p>
+      </div>
+      <!-- METRICA REAL: substitua ou adicione um numero que voce consiga sustentar
+           (ex: horas/semana de planilha eliminadas, % de adocao do painel). -->
+      <div class="stat-strip">
+        <div><div class="stat-num">+50</div><div class="stat-label">Usuários ativos</div></div>
+        <div><div class="stat-num">RLS</div><div class="stat-label">Acesso por perfil</div></div>
+        <div><div class="stat-num">1</div><div class="stat-label">Painel para toda a operação</div></div>
+      </div>
+    </div>
+
+    <div class="tag-row" style="margin-top:26px;">
+      <span class="tag">Power BI</span>
+      <span class="tag">RLS</span>
+      <span class="tag">Modelo Semântico</span>
+      <span class="tag">DAX</span>
+      <span class="tag">IA</span>
+      <span class="tag">Tracking</span>
+      <span class="tag">Agro</span>
+      <span class="tag">Governança</span>
+    </div>
+
+    <a href="#contato" class="btn-fill" style="margin-top:30px; display:inline-block;">Quero algo parecido</a>
+  </div>
+</section>
+
+<section id="dashboard" class="section-panel"><span id="dash" hidden></span>
+  <div class="wrap-wide">
+    <div class="kicker">04 — Demonstração</div>
+    <div class="sec-title">Tracking de NF e SLA ao vivo</div>
+    <p class="body-text" style="max-width:60ch; margin-bottom:8px;"><span>Painel de exemplo construído em código, com dados fictícios, que reproduz a lógica de acompanhamento de notas fiscais e nível de serviço que aplico em projetos reais. Troque a regional e veja os indicadores reagirem.</span></p>
+
+    <div style="display:flex; align-items:flex-end; gap:16px; margin:22px 0 26px; flex-wrap:wrap;">
+      <div class="field" style="margin:0;">
+        <label>Regional</label>
+        <select id="dashRegional" style="min-width:200px;">
+          <option value="Todas" selected>Todas</option>
+          <option>Sudeste</option>
+          <option>Sul</option>
+          <option>Nordeste</option>
+          <option>Centro-Oeste</option>
+        </select>
+      </div>
+      <span class="form-helper" style="padding-bottom:12px;">Dados fictícios para demonstração</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin-bottom:16px;">
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiTotal">—</div><div class="stat-label">NF emitidas (14 dias)</div></div>
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiSla">—</div><div class="stat-label">SLA médio</div></div>
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiAtraso">—</div><div class="stat-label">NF atrasadas</div></div>
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiTempo">—</div><div class="stat-label">Tempo médio de ciclo</div></div>
+    </div>
+
+    <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
+      <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">Volume de NF e SLA por dia</div>
+      <div style="position:relative; height:280px;"><canvas id="dashLinha"></canvas></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:16px;">
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
+        <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">SLA médio por regional</div>
+        <div style="position:relative; height:260px;"><canvas id="dashBarra"></canvas></div>
+      </div>
+      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
+        <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">Distribuição por status</div>
+        <div style="position:relative; height:260px;"><canvas id="dashRosca"></canvas></div>
+      </div>
+    </div>
+
+    <p class="form-helper" style="margin-top:18px;">Construído com Chart.js. Nenhum dado real de cliente é utilizado neste exemplo.</p>
+  </div>
+</section>
+
 <section>
   <div class="wrap-wide">
-    <div class="kicker">03 — Investimento</div>
+    <div class="kicker">05 — Investimento</div>
     <div class="sec-title">Pacotes de referência</div>
     <p style="font-size:14px; color:var(--ink-3); margin-bottom:8px; max-width:60ch;">Os valores abaixo são uma referência inicial. O escopo final é ajustado após entender a complexidade dos dados e o número de usuários do seu projeto.</p>
 
@@ -175,7 +294,7 @@
 
 <section class="section-panel" id="contato">
   <div class="wrap-wide">
-    <div class="kicker">04 — Solicitar</div>
+    <div class="kicker">06 — Solicitar</div>
     <div class="sec-title">Conte um pouco sobre seu projeto</div>
     <p style="font-size:14.5px; color:var(--ink-2); max-width:56ch; margin-bottom:36px;">Preencha o formulário com o máximo de detalhe possível. Retorno em até 1 dia útil com uma proposta ajustada ao seu caso.</p>
 
@@ -239,6 +358,8 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+<script src="dashboard.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>

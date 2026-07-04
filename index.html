@@ -48,8 +48,7 @@
       <a href="index.html" class="is-active">Portfólio</a>
       <a href="bi.html">BI</a>
       <a href="curriculos.html">Currículos</a>
-      <a href="caso-agro.html">Estudo de caso</a>
-      <a href="#dashboard">Dashboard</a>
+      <a href="bi.html#estudo-de-caso">Estudo de caso</a>
       <a href="#contato">Contato</a>
     </div>
   </div>
@@ -110,81 +109,9 @@
   </div>
 </section>
 
-<section id="projeto">
-  <div class="wrap-wide">
-    <div class="kicker">03 — Em destaque</div>
-    <div class="sec-title">BI corporativo com RLS</div>
-    <div class="body-text">
-      <p>Solução de BI para tracking no setor agro com Row Level Security por perfil de acesso, modelo semântico documentado com inteligência artificial e base corporativa de usuários ativos. Foco em governança, escalabilidade e adoção em larga escala.</p>
-    </div>
-    <div class="stat-strip">
-      <div><div class="stat-num">+50</div><div class="stat-label">Usuários ativos</div></div>
-      <div><div class="stat-num">RLS</div><div class="stat-label">Controle de acesso</div></div>
-      <div><div class="stat-num">IA</div><div class="stat-label">Documentação</div></div>
-    </div>
-    <div class="tag-row">
-      <span class="tag">Power BI</span>
-      <span class="tag">RLS</span>
-      <span class="tag">Modelo Semântico</span>
-      <span class="tag">IA</span>
-      <span class="tag">Tracking</span>
-      <span class="tag">Agro</span>
-      <span class="tag">Governança</span>
-    </div>
-    <a href="caso-agro.html" class="btn-line" style="margin-top:26px; display:inline-block;">Ler o estudo de caso completo</a>
-  </div>
-</section>
-
-<section id="dashboard"><span id="dash" hidden></span>
-  <div class="wrap-wide">
-    <div class="kicker">04 — Demonstração</div>
-    <div class="sec-title">Tracking de NF e SLA</div>
-    <p class="body-text" style="max-width:60ch; margin-bottom:8px;"><span>Painel de exemplo construído em código, com dados fictícios, que reproduz a lógica de acompanhamento de notas fiscais e nível de serviço que aplico em projetos reais.</span></p>
-
-    <div style="display:flex; align-items:flex-end; gap:16px; margin:22px 0 26px; flex-wrap:wrap;">
-      <div class="field" style="margin:0;">
-        <label>Regional</label>
-        <select id="dashRegional" style="min-width:200px;">
-          <option value="Todas" selected>Todas</option>
-          <option>Sudeste</option>
-          <option>Sul</option>
-          <option>Nordeste</option>
-          <option>Centro-Oeste</option>
-        </select>
-      </div>
-      <span class="form-helper" style="padding-bottom:12px;">Dados fictícios para demonstração</span>
-    </div>
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin-bottom:16px;">
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiTotal">—</div><div class="stat-label">NF emitidas (14 dias)</div></div>
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiSla">—</div><div class="stat-label">SLA médio</div></div>
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiAtraso">—</div><div class="stat-label">NF atrasadas</div></div>
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiTempo">—</div><div class="stat-label">Tempo médio de ciclo</div></div>
-    </div>
-
-    <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
-      <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">Volume de NF e SLA por dia</div>
-      <div style="position:relative; height:280px;"><canvas id="dashLinha"></canvas></div>
-    </div>
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:16px;">
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
-        <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">SLA médio por regional</div>
-        <div style="position:relative; height:260px;"><canvas id="dashBarra"></canvas></div>
-      </div>
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
-        <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">Distribuição por status</div>
-        <div style="position:relative; height:260px;"><canvas id="dashRosca"></canvas></div>
-      </div>
-    </div>
-
-    <p class="form-helper" style="margin-top:18px;">Construído com Chart.js. Nenhum dado real de cliente é utilizado neste exemplo.</p>
-  </div>
-</section>
-
 <section class="section-panel">
   <div class="wrap-wide">
-    <div class="kicker">05 — Serviços</div>
+    <div class="kicker">03 — Serviços</div>
     <div class="sec-title">Qual problema eu resolvo</div>
     <p class="body-text" style="margin-bottom:32px;"><span>Se a decisão da sua área ainda depende de planilha copiada na mão, relatório que ninguém confia ou painel que só mostra número sem dizer o que fazer, esse é o gap que eu fecho.</span></p>
     <div class="card-grid-2">
@@ -204,7 +131,7 @@
 
 <section id="contato">
   <div class="wrap-wide">
-    <div class="kicker">06 — Contato</div>
+    <div class="kicker">04 — Contato</div>
     <div class="sec-title">Peça um diagnóstico gratuito</div>
     <p class="body-text" style="max-width:56ch; margin-bottom:32px;"><span>Descreva em uma linha o desafio da sua operação ou do seu painel atual. Retorno em até 1 dia útil com uma leitura inicial do que dá para melhorar, sem compromisso.</span></p>
 
@@ -251,8 +178,6 @@
 </footer>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
-<script src="dashboard.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>
