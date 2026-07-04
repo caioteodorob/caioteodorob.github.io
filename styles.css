@@ -339,10 +339,9 @@ a:focus-visible, button:focus-visible, .btn-fill:focus-visible, .btn-line:focus-
 /* =========================================================
    Barra de busca no menu (todas as paginas)
    ========================================================= */
-.nav-left { display: flex; align-items: center; gap: 18px; }
-.nav-search { position: relative; }
+.nav-search { position: relative; flex-shrink: 0; margin: 0 auto; }
 .nav-search-input {
-  width: 190px; max-width: 42vw;
+  width: 240px; max-width: 32vw;
   background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
   color: var(--ink); font-family: 'Inter', sans-serif; font-size: 13px;
   padding: 8px 12px; transition: border-color 0.15s, box-shadow 0.15s;
