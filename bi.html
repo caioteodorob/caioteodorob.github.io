@@ -40,7 +40,13 @@
 
 <nav class="topbar">
   <div class="wrap-wide">
-    <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
+    <div class="nav-left">
+      <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
+      <div class="nav-search">
+        <input type="text" id="siteSearch" class="nav-search-input" placeholder="Buscar no site" autocomplete="off" aria-label="Buscar no site">
+        <ul class="nav-search-results" id="siteSearchResults"></ul>
+      </div>
+    </div>
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
@@ -267,7 +273,7 @@
   </div>
 </section>
 
-<section>
+<section id="investimento">
   <div class="wrap-wide">
     <div class="kicker">05 — Investimento</div>
     <div class="sec-title">Como funciona o investimento</div>
@@ -328,7 +334,7 @@
           <input type="text" name="nome" required>
         </div>
         <div class="field">
-          <label>E-mail ou WhatsApp</label>
+          <label>E-mail ou telefone</label>
           <input type="text" name="contato" placeholder="seu@email.com ou (11) 99999-9999" required>
         </div>
       </div>
@@ -361,12 +367,6 @@
 
       <div class="confirm-msg" id="confirmBox">Solicitação recebida. Vou analisar seu projeto e retorno em até 1 dia útil com uma proposta.</div>
     </form>
-
-    <p class="form-helper" style="margin-top:28px;">Prefere falar direto?</p>
-    <div class="contact-row" style="margin-top:10px;">
-      <!-- TROQUE 5519999999999 pelo seu WhatsApp real (DDI 55 + DDD + numero) -->
-      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Caio%2C%20quero%20uma%20proposta%20de%20BI." target="_blank" rel="noopener">Chamar no WhatsApp</a>
-    </div>
   </div>
 </section>
 

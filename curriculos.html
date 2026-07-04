@@ -40,7 +40,13 @@
 
 <nav class="topbar">
   <div class="wrap-wide">
-    <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
+    <div class="nav-left">
+      <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
+      <div class="nav-search">
+        <input type="text" id="siteSearch" class="nav-search-input" placeholder="Buscar no site" autocomplete="off" aria-label="Buscar no site">
+        <ul class="nav-search-results" id="siteSearchResults"></ul>
+      </div>
+    </div>
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
@@ -48,7 +54,7 @@
       <a href="index.html">Portfólio</a>
       <a href="bi.html">BI</a>
       <a href="curriculos.html" class="is-active">Currículos</a>
-      <a href="caso-agro.html">Estudo de caso</a>
+      <a href="bi.html#estudo-de-caso">Estudo de caso</a>
       <a href="#contato">Contato</a>
     </div>
   </div>
@@ -137,7 +143,7 @@
           <input type="text" name="nome" required>
         </div>
         <div class="field">
-          <label>E-mail ou WhatsApp</label>
+          <label>E-mail ou telefone</label>
           <input type="text" name="contato" placeholder="seu@email.com ou (11) 99999-9999" required>
         </div>
       </div>
@@ -180,12 +186,6 @@
 
       <div class="confirm-msg" id="confirmBox">Solicitação recebida. Vou analisar o que você enviou e retorno em até 1 dia útil pelo contato informado, junto com o valor do serviço.</div>
     </form>
-
-    <p class="form-helper" style="margin-top:28px;">Prefere falar direto?</p>
-    <div class="contact-row" style="margin-top:10px;">
-      <!-- TROQUE 5519999999999 pelo seu WhatsApp real (DDI 55 + DDD + numero) -->
-      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Caio%2C%20quero%20um%20curr%C3%ADculo%20otimizado." target="_blank" rel="noopener">Chamar no WhatsApp</a>
-    </div>
   </div>
 </section>
 

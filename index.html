@@ -40,7 +40,13 @@
 
 <nav class="topbar">
   <div class="wrap-wide">
-    <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
+    <div class="nav-left">
+      <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
+      <div class="nav-search">
+        <input type="text" id="siteSearch" class="nav-search-input" placeholder="Buscar no site" autocomplete="off" aria-label="Buscar no site">
+        <ul class="nav-search-results" id="siteSearchResults"></ul>
+      </div>
+    </div>
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
@@ -58,13 +64,11 @@
   <div class="wrap-wide" style="position:relative; z-index:1;">
     <div style="max-width:720px;">
       <div class="status-pill"><span class="status-dot"></span>Disponível para novos projetos</div>
-      <h1 class="hero-title">Caio <em>Teodoro</em></h1>
+      <h1 class="hero-title">Do dado à <em>decisão</em></h1>
       <div class="hero-role">Analista Operacional &amp; BI · BI e Tracking</div>
       <p class="hero-tagline" style="max-width:560px;">Transformo operação e tracking em painéis que supervisão, coordenação e gerência usam para decidir com contexto, não com planilha solta.</p>
       <div class="hero-cta">
-        <!-- TROQUE 5519999999999 pelo seu WhatsApp real (DDI 55 + DDD + numero, so digitos) -->
-        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Caio%2C%20vim%20pelo%20seu%20site%20e%20quero%20falar%20sobre%20um%20projeto%20de%20BI." target="_blank" rel="noopener" class="btn-fill">Falar sobre um projeto</a>
-        <a href="#contato" class="btn-line">Pedir diagnóstico</a>
+        <a href="#contato" class="btn-fill">Falar sobre um projeto</a>
         <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank" rel="noopener" class="btn-line">LinkedIn</a>
       </div>
     </div>
@@ -191,7 +195,7 @@
           <input type="text" name="nome" required>
         </div>
         <div class="field">
-          <label>E-mail ou WhatsApp</label>
+          <label>E-mail ou telefone</label>
           <input type="text" name="contato" placeholder="seu@email.com ou (11) 99999-9999" required>
         </div>
       </div>
@@ -207,9 +211,7 @@
     </form>
 
     <p class="form-helper" style="margin-top:28px;">Prefere falar direto?</p>
-    <div class="contact-row" style="margin-top:10px; gap:22px; flex-wrap:wrap;">
-      <!-- TROQUE 5519999999999 pelo seu WhatsApp real (DDI 55 + DDD + numero) -->
-      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Caio%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener">WhatsApp</a>
+    <div class="contact-row" style="margin-top:10px;">
       <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank" rel="noopener">linkedin.com/in/caiobarbosateodoro</a>
     </div>
   </div>
