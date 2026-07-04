@@ -1,250 +1,97 @@
-/* =========================================================
-   Caio Teodoro — folha de estilo compartilhada
-   Usada por index.html, bi.html e curriculos.html
-   ========================================================= */
-:root {
-  --bg:       #05070C;
-  --bg-2:     #0B0F18;
-  --panel:    #10141F;
-  --ink:      #F4F6FA;
-  --ink-2:    #9BA4B5;
-  --ink-3:    #7A8497;
-  --line:     #1E2330;
-  --electric: #2D7FFF;
-  --electric-2: #5B9AFF;
-  --electric-dim: rgba(45,127,255,0.12);
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  color: var(--ink);
-  background: var(--bg);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-.condensed { font-family: 'Archivo', 'Inter', sans-serif; }
-a { color: inherit; text-decoration: none; }
+# Caio Teodoro | Portfólio e Serviços
 
-.wrap { max-width: 880px; margin: 0 auto; padding: 0 28px; }
-.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+Site pessoal de Caio Teodoro, Analista Operacional e de BI. Reúne o portfólio profissional e duas frentes de serviço sob demanda: soluções de Business Intelligence e estruturação de currículos.
 
-nav.topbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-  background: rgba(5,7,12,0.85);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-  padding: 16px 0;
-}
-nav.topbar .wrap-wide { display: flex; align-items: center; justify-content: space-between; }
-.brand-mark {
-  font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 15px;
-  letter-spacing: -0.01em; color: var(--ink); text-transform: uppercase;
-}
-.brand-mark span { color: var(--electric); }
-.nav-links { display: flex; gap: 30px; align-items: center; }
-.nav-links a {
-  font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
-  color: var(--ink-2); transition: color 0.15s; position: relative;
-}
-.nav-links a:hover { color: var(--ink); }
-.nav-links a.is-active { color: var(--ink); }
-.nav-links a.is-active::after {
-  content: ''; position: absolute; bottom: -16px; left: 0; right: 0; height: 2px; background: var(--electric);
-}
+**No ar em:** https://caioteodorob.github.io
 
-.hero { padding: 168px 0 90px; position: relative; overflow: hidden; }
-.hero::before {
-  content: ''; position: absolute; top: -200px; right: -150px; width: 600px; height: 600px;
-  background: radial-gradient(circle, var(--electric-dim) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-inner { position: relative; z-index: 1; display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
-.hero-avatar {
-  width: 168px; height: 168px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
-  border: 3px solid var(--electric); box-shadow: 0 0 0 6px rgba(45,127,255,0.08);
-}
-.hero-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-.status-pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--electric-2); margin-bottom: 16px;
-  background: var(--electric-dim); padding: 6px 14px; border-radius: 100px;
-  border: 1px solid rgba(45,127,255,0.25);
-}
-.status-dot { width: 6px; height: 6px; background: #3DDC97; border-radius: 50%; box-shadow: 0 0 8px #3DDC97; }
-h1.hero-title {
-  font-family: 'Archivo', sans-serif; font-weight: 800; font-style: normal;
-  font-size: clamp(40px, 6vw, 68px); line-height: 0.96; letter-spacing: -0.025em;
-  text-transform: uppercase; color: var(--ink);
-}
-h1.hero-title em { font-style: normal; color: var(--electric); }
-.hero-role {
-  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
-  color: var(--ink-2); margin: 14px 0 18px;
-}
-.hero-tagline { font-size: 15.5px; color: var(--ink-2); line-height: 1.8; max-width: 420px; margin-bottom: 26px; }
-.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+---
 
-.btn-fill {
-  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
-  color: #05070C; background: var(--electric);
-  padding: 13px 26px; border-radius: 4px; transition: background 0.15s, transform 0.15s;
-  display: inline-block; border: none;
-}
-.btn-fill:hover { background: var(--electric-2); color: #05070C; transform: translateY(-1px); }
-.btn-line {
-  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
-  color: var(--ink); background: transparent;
-  padding: 12px 26px; border-radius: 4px; border: 1px solid var(--line);
-  transition: border-color 0.15s, color 0.15s; display: inline-block;
-}
-.btn-line:hover { border-color: var(--electric); color: var(--electric-2); }
+## Sobre o projeto
 
-section { padding: 92px 0; border-top: 1px solid var(--line); }
-.section-panel { background: var(--bg-2); }
+Site estático de três páginas, sem frameworks ou dependências de build. Todo o estilo e comportamento são compartilhados entre as páginas por meio de um único arquivo de CSS e um único de JavaScript, o que mantém a manutenção centralizada.
 
-.kicker {
-  font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 800; text-transform: uppercase;
-  letter-spacing: 0.16em; color: var(--electric); margin-bottom: 16px;
-  display: flex; align-items: center; gap: 10px;
-}
-.kicker::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-.sec-title {
-  font-family: 'Archivo', sans-serif; font-weight: 800; text-transform: uppercase;
-  font-size: clamp(26px, 3.6vw, 38px); letter-spacing: -0.015em; line-height: 1.05;
-  color: var(--ink); max-width: 18ch; margin-bottom: 36px;
-}
+- `index.html`: portfólio, trajetória e projeto em destaque
+- `bi.html`: serviços de BI, pacotes de referência e formulário de solicitação
+- `curriculos.html`: serviço de currículos otimizados para ATS e formulário de solicitação
 
-.body-text p {
-  font-size: 15.5px; color: var(--ink-2); line-height: 1.9; max-width: 62ch; margin-bottom: 1.1em;
-}
-.body-text p:last-child { margin-bottom: 0; }
-.body-text strong { color: var(--ink); font-weight: 700; }
+---
 
-.stat-strip { display: flex; gap: 44px; margin: 28px 0 8px; flex-wrap: wrap; }
-.stat-num { font-family: 'Archivo', sans-serif; font-size: 30px; font-weight: 800; color: var(--electric-2); letter-spacing: -0.02em; }
-.stat-label { font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+## Tecnologias
 
-.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.tag {
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
-  color: var(--electric-2); background: var(--electric-dim); border: 1px solid rgba(45,127,255,0.2);
-  border-radius: 4px; padding: 5px 12px;
-}
+- HTML5 semântico
+- CSS3 com variáveis nativas (design tokens) para tema e paleta
+- JavaScript puro, sem bibliotecas
+- Supabase como backend dos formulários (REST, insert em tabela única)
+- Google Fonts (Archivo e Inter)
+- GitHub Pages para hospedagem
 
-.list-clean { list-style: none; }
-.list-row { display: grid; grid-template-columns: 64px 1fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); }
-.list-row:first-child { border-top: none; padding-top: 0; }
-.list-row-num { font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 800; color: var(--electric); padding-top: 2px; }
-.list-row-title { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-.list-row-desc { font-size: 14px; color: var(--ink-2); line-height: 1.8; max-width: 56ch; }
+---
 
-.card-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.card-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
-.card-bold {
-  background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
-  padding: 28px 26px; transition: border-color 0.15s, transform 0.15s;
-}
-.card-bold:hover { border-color: var(--electric); transform: translateY(-2px); }
-.card-bold h3 {
-  font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 800; text-transform: uppercase;
-  letter-spacing: 0.04em; color: var(--electric-2); margin-bottom: 12px;
-}
-.card-bold p { font-size: 14px; color: var(--ink-2); line-height: 1.8; }
+## Estrutura de arquivos
 
-.pkg-row {
-  border-top: 1px solid var(--line); padding: 30px 0;
-  display: grid; grid-template-columns: 200px 1fr auto; gap: 28px; align-items: start;
-}
-.pkg-row:first-child { border-top: none; }
-.pkg-row.featured { background: var(--electric-dim); margin: 0 -28px; padding: 30px 28px; border-radius: 6px; border-top: none; }
-.pkg-name { font-family: 'Archivo', sans-serif; font-size: 19px; font-weight: 800; text-transform: uppercase; }
-.pkg-badge {
-  display: inline-block; font-size: 10px; font-weight: 800; text-transform: uppercase;
-  color: #05070C; background: var(--electric); padding: 3px 8px; border-radius: 3px; margin-bottom: 8px;
-}
-.pkg-list { list-style: none; font-size: 13.5px; color: var(--ink-2); }
-.pkg-list li { padding: 4px 0; }
-.pkg-list li::before { content: '— '; color: var(--electric); }
-.pkg-price { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--electric-2); white-space: nowrap; }
-.pkg-price span { display: block; font-family: 'Inter', sans-serif; font-size: 10.5px; color: var(--ink-3); font-weight: 500; margin-top: 2px; text-transform: none; }
+```
+.
+├── index.html          # Página inicial e portfólio
+├── bi.html             # Serviços de BI
+├── curriculos.html     # Serviços de currículo
+├── styles.css          # Folha de estilo compartilhada pelas três páginas
+├── app.js              # Menu mobile e envio dos formulários (Supabase)
+└── assets/
+    ├── avatar.webp     # Foto de perfil otimizada (fallback em .jpg)
+    ├── avatar.jpg
+    ├── favicon.svg     # Ícone da aba do navegador
+    └── og-cover.png    # Imagem de prévia para compartilhamento (Open Graph)
+```
 
-form.bold-form { display: grid; gap: 20px; max-width: 660px; }
-.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.field label {
-  display: block; font-size: 11px; font-weight: 700; color: var(--ink-3); letter-spacing: 0.06em;
-  margin-bottom: 9px; text-transform: uppercase;
-}
-.field input, .field select, .field textarea {
-  width: 100%; border: 1px solid var(--line); border-radius: 4px;
-  background: var(--panel); padding: 12px 14px; font-size: 14.5px; color: var(--ink);
-  font-family: 'Inter', sans-serif;
-}
-.field input:focus, .field select:focus, .field textarea:focus {
-  outline: none; border-color: var(--electric); box-shadow: 0 0 0 3px var(--electric-dim);
-}
-.field input::placeholder, .field textarea::placeholder { color: var(--ink-3); }
-.field textarea { resize: vertical; min-height: 88px; }
-.form-submit-row { display: flex; align-items: center; gap: 18px; margin-top: 4px; flex-wrap: wrap; }
-.form-helper { font-size: 12px; color: var(--ink-3); }
-.confirm-msg {
-  display: none; font-size: 13.5px; color: var(--electric-2);
-  border-left: 2px solid var(--electric); padding-left: 14px; margin-top: 4px;
-}
-.confirm-msg.show { display: block; }
+---
 
-.contact-row { display: flex; align-items: center; gap: 12px; font-size: 16px; color: var(--ink-2); }
-.contact-row a { color: var(--ink); border-bottom: 1px solid var(--electric); padding-bottom: 1px; transition: color 0.15s; }
-.contact-row a:hover { color: var(--electric-2); }
+## Recursos implementados
 
-footer.site-footer { padding: 26px 0; color: var(--ink-3); font-size: 12px; border-top: 1px solid var(--line); }
-footer.site-footer .wrap-wide { display: flex; justify-content: space-between; align-items: center; }
-footer.site-footer a { color: var(--ink-2); }
-footer.site-footer a:hover { color: var(--electric-2); }
+- Layout responsivo com menu recolhível (hamburger) em telas pequenas
+- Meta tags de SEO e Open Graph para prévia de link em LinkedIn e WhatsApp
+- Formulários com validação, honeypot anti-spam e persistência via Supabase
+- Controle de acesso por Row Level Security na tabela de solicitações
+- Contraste de cores dentro do padrão de acessibilidade WCAG AA
+- Foco de teclado visível para navegação sem mouse
 
-@media (max-width: 760px) {
-  .hero-inner { flex-direction: column; align-items: flex-start; text-align: left; }
-  .hero { padding: 130px 0 60px; }
-  section { padding: 56px 0; }
-  .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
-  .form-row-2 { grid-template-columns: 1fr; }
-  .pkg-row { grid-template-columns: 1fr; }
-  .pkg-row.featured { margin: 0; }
-  nav.topbar .nav-links { gap: 16px; }
-  .stat-strip { gap: 24px; }
-}
+---
 
+## Executar localmente
 
-/* --- Menu mobile (hamburger) --- */
-.nav-toggle {
-  display: none; background: transparent; border: 1px solid var(--line);
-  border-radius: 4px; width: 40px; height: 38px; cursor: pointer;
-  align-items: center; justify-content: center; flex-direction: column; gap: 4px;
-}
-.nav-toggle span { display: block; width: 18px; height: 2px; background: var(--ink); transition: 0.2s; }
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+Por ser um site estático, basta um servidor local simples. Com Python instalado:
 
-/* --- Honeypot anti-spam (invisível para humanos) --- */
-.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+```bash
+# Na raiz do projeto
+python3 -m http.server 8000
+```
 
-/* --- Foco visível para acessibilidade de teclado --- */
-a:focus-visible, button:focus-visible, .btn-fill:focus-visible, .btn-line:focus-visible {
-  outline: 2px solid var(--electric-2); outline-offset: 3px; border-radius: 3px;
-}
+- Acesse `http://localhost:8000` no navegador
+- Qualquer editor de texto serve para alterar os arquivos, sem etapa de compilação
 
-@media (max-width: 760px) {
-  .nav-toggle { display: inline-flex; }
-  nav.topbar .wrap-wide { position: relative; }
-  .nav-links {
-    position: absolute; top: calc(100% + 16px); right: 0; left: 0;
-    flex-direction: column; align-items: flex-start; gap: 0;
-    background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px;
-    padding: 8px; display: none;
-  }
-  .nav-links.is-open { display: flex; }
-  .nav-links a { width: 100%; padding: 12px 14px; }
-  .nav-links a.is-active::after { display: none; }
-}
+---
+
+## Configuração do backend
+
+Os formulários enviam os dados para uma tabela `solicitacoes` no Supabase. Para reaproveitar o código:
+
+- Crie um projeto no Supabase e uma tabela `solicitacoes`
+- Ative Row Level Security com política permitindo apenas `INSERT`
+- Substitua as constantes `SUPABASE_URL` e `SUPABASE_KEY` no início do `app.js`
+
+---
+
+## Deploy
+
+- O repositório está publicado via GitHub Pages a partir da branch `main`
+- Cada commit na `main` atualiza o site no ar em 1 a 2 minutos
+- A constante `SITE_URL`, no topo do `<head>` de cada HTML, deve apontar para o domínio real para que a prévia de link renderize corretamente
+
+---
+
+## Contato
+
+- LinkedIn: https://www.linkedin.com/in/caiobarbosateodoro/
+
+---
+
+© 2026 Caio Teodoro
