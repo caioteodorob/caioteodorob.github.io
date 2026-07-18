@@ -96,15 +96,14 @@ a { text-decoration: none; }
 .kicker::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 
 /* -------- Navbar -------- */
-.navbar-brand-mark {
-  font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 15px;
-  text-transform: uppercase; letter-spacing: -.01em; color: var(--ink);
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--electric-dim); border: 1px solid rgba(45,127,255,.35);
+  font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 14px;
+  letter-spacing: -.03em; color: var(--electric-2); transition: border-color .15s, transform .15s;
 }
-.navbar-brand-mark span {
-  color: var(--electric-2); font-size: 10px; font-weight: 800;
-  border: 1px solid rgba(45,127,255,.35); border-radius: 4px;
-  padding: 2px 7px; margin-left: 6px; letter-spacing: .08em;
-}
+.navbar-brand:hover .brand-mark { border-color: var(--electric); transform: translateY(-1px); }
 .navbar-blur {
   background: rgba(5,7,12,.85);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -156,6 +155,17 @@ a { text-decoration: none; }
   padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(45,127,255,.25);
 }
 .status-dot { width: 6px; height: 6px; background: var(--ok); border-radius: 50%; box-shadow: 0 0 8px var(--ok); }
+
+.hero-visual {
+  position: absolute; top: 50%; right: 28px; transform: translateY(-54%);
+  width: 300px; animation: heroVisualIn .6s ease-out both .1s;
+}
+.hero-visual .data-panel { box-shadow: 0 26px 60px rgba(0,0,0,.55); border-color: rgba(45,127,255,.25); }
+.hero-visual .bar-row { grid-template-columns: 78px 1fr 38px; }
+.hero-visual .bar-row span:first-child { font-size: 12px; color: var(--ink-2); }
+@keyframes heroVisualIn { from { opacity: 0; transform: translateY(-46%); } to { opacity: 1; transform: translateY(-54%); } }
+@media (prefers-reduced-motion: reduce) { .hero-visual { animation: none; } }
+@media (max-width: 1200px) { .hero-visual { display: none; } }
 
 /* -------- Botões -------- */
 .btn-primary {
