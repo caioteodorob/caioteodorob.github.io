@@ -8,19 +8,23 @@ Site pessoal de Caio Teodoro, Analista Operacional e de BI. Reúne o portfólio 
 
 ## Sobre o projeto
 
-Site estático de três páginas, sem frameworks ou dependências de build. Todo o estilo e comportamento são compartilhados entre as páginas por meio de um único arquivo de CSS e um único de JavaScript, o que mantém a manutenção centralizada.
+Site estático de quatro páginas, sem build step. O visual usa Bootstrap 5 (grid, navbar, cards, accordion, formulários) como base, com uma camada de CSS própria por cima para aplicar a identidade de marca (tema escuro, azul elétrico, tipografia Archivo + Inter). Todo o estilo e comportamento compartilhado vive em um único CSS e um único JS.
 
-- `index.html`: portfólio, trajetória e projeto em destaque
-- `bi.html`: serviços de BI, pacotes de referência e formulário de solicitação
-- `curriculos.html`: serviço de currículos otimizados para ATS e formulário de solicitação
+- `index.html`: portfólio, trajetória e visão geral dos dois serviços
+- `bi.html`: serviços de BI, teaser do estudo de caso, demonstração interativa, pacotes e FAQ
+- `curriculos.html`: serviço de currículos otimizados para ATS
+- `caso-agro.html`: estudo de caso completo (BI com RLS no agro)
 
 ---
 
 ## Tecnologias
 
 - HTML5 semântico
-- CSS3 com variáveis nativas (design tokens) para tema e paleta
-- JavaScript puro, sem bibliotecas
+- Bootstrap 5.3 (CSS + JS bundle, via CDN) para grid, navbar, cards, accordion e formulários
+- Bootstrap Icons (via CDN)
+- CSS3 com variáveis nativas para sobrepor o tema de marca aos componentes do Bootstrap
+- JavaScript puro, sem bibliotecas de build
+- Chart.js (via CDN) para o dashboard de demonstração
 - Supabase como backend dos formulários (REST, insert em tabela única)
 - Google Fonts (Archivo e Inter)
 - GitHub Pages para hospedagem
@@ -32,10 +36,12 @@ Site estático de três páginas, sem frameworks ou dependências de build. Todo
 ```
 .
 ├── index.html          # Página inicial e portfólio
-├── bi.html             # Serviços de BI
+├── bi.html             # Serviços de BI + demonstração + FAQ
 ├── curriculos.html     # Serviços de currículo
-├── styles.css          # Folha de estilo compartilhada pelas três páginas
-├── app.js              # Menu mobile e envio dos formulários (Supabase)
+├── caso-agro.html      # Estudo de caso completo
+├── styles.css           # Tema de marca sobre o Bootstrap 5
+├── app.js               # Menu mobile, busca e envio dos formulários (Supabase)
+├── dashboard.js          # Gráficos de demonstração (Chart.js, dados fictícios)
 └── assets/
     ├── avatar.webp     # Foto de perfil otimizada (fallback em .jpg)
     ├── avatar.jpg
@@ -47,10 +53,11 @@ Site estático de três páginas, sem frameworks ou dependências de build. Todo
 
 ## Recursos implementados
 
-- Layout responsivo com menu recolhível (hamburger) em telas pequenas
+- Layout responsivo com navbar colapsável (Bootstrap Collapse) em telas pequenas
 - Meta tags de SEO e Open Graph para prévia de link em LinkedIn e WhatsApp
 - Formulários com validação, honeypot anti-spam e persistência via Supabase
 - Controle de acesso por Row Level Security na tabela de solicitações
+- FAQ em accordion (Bootstrap) na página de BI — revise as respostas antes de publicar
 - Contraste de cores dentro do padrão de acessibilidade WCAG AA
 - Foco de teclado visível para navegação sem mouse
 
@@ -84,7 +91,7 @@ Os formulários enviam os dados para uma tabela `solicitacoes` no Supabase. Para
 
 - O repositório está publicado via GitHub Pages a partir da branch `main`
 - Cada commit na `main` atualiza o site no ar em 1 a 2 minutos
-- A constante `SITE_URL`, no topo do `<head>` de cada HTML, deve apontar para o domínio real para que a prévia de link renderize corretamente
+- A tag `<link rel="canonical">`, no `<head>` de cada HTML, deve apontar para o domínio real para que a prévia de link renderize corretamente
 
 ---
 

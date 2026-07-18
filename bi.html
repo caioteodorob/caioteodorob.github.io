@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="styles.css">
 
 <!-- ANALYTICS: Microsoft Clarity (gratuito). Descomente e troque SEU_ID_CLARITY.
@@ -38,202 +40,171 @@
 </head>
 <body>
 
-<nav class="topbar">
-  <div class="wrap-wide">
-    <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
-    <div class="nav-search">
-      <input type="text" id="siteSearch" class="nav-search-input" placeholder="Buscar no site" autocomplete="off" aria-label="Buscar no site">
-      <ul class="nav-search-results" id="siteSearchResults"></ul>
-    </div>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
+<nav class="navbar navbar-expand-lg fixed-top navbar-blur border-bottom" style="--bs-border-color:var(--line);">
+  <div class="container-xl">
+    <a href="index.html" class="navbar-brand navbar-brand-mark py-0">Caio Teodoro<span>BI</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menu">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Portfólio</a>
-      <a href="bi.html" class="is-active">BI</a>
-      <a href="curriculos.html">Currículos</a>
-      <a href="#estudo-de-caso">Estudo de caso</a>
-      <a href="#dashboard">Demonstração</a>
-      <a href="#contato">Contato</a>
+    <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav ms-auto mb-3 mb-lg-0 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Portfólio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="bi.html">BI</a></li>
+        <li class="nav-item"><a class="nav-link" href="curriculos.html">Currículos</a></li>
+        <li class="nav-item"><a class="nav-link" href="caso-agro.html">Estudo de caso</a></li>
+        <li class="nav-item"><a class="nav-link" href="#dashboard">Demonstração</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+      <div class="nav-search-wrap ms-lg-3">
+        <input type="text" id="siteSearch" class="form-control nav-search-input" placeholder="Buscar no site" autocomplete="off" aria-label="Buscar no site">
+        <ul class="nav-search-results" id="siteSearchResults"></ul>
+      </div>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="wrap-wide" style="display:block;">
-    <div class="status-pill"><span class="status-dot"></span>Serviços de BI</div>
-    <h1 class="hero-title" style="max-width:17ch;">Dados que sustentam <em>decisão</em></h1>
-    <p class="hero-tagline" style="max-width:520px; font-size:16px; margin-top:20px;">Construo soluções de Business Intelligence pensadas para quem decide: modelagem correta, governança de acesso e um painel que entrega contexto, não apenas indicadores soltos.</p>
-    <div class="hero-cta">
-      <a href="#contato" class="btn-fill">Solicitar proposta</a>
-      <a href="#servicos" class="btn-line">Ver serviços</a>
+  <div class="container-xl">
+    <span class="status-pill mb-3"><span class="status-dot"></span>Serviços de BI</span>
+    <h1 class="display-brand mt-2" style="max-width:17ch;">Dados que sustentam <em>decisão</em></h1>
+    <p class="fs-6 mt-4" style="max-width:520px; color:var(--ink-2); line-height:1.8;">Modelagem correta, governança de acesso e um painel que entrega contexto, não indicador solto.</p>
+    <div class="d-flex flex-wrap gap-3 mt-4">
+      <a href="#contato" class="btn btn-primary">Solicitar proposta</a>
+      <a href="#servicos" class="btn btn-outline-light">Ver serviços</a>
     </div>
   </div>
 </header>
 
-<section id="servicos">
-  <div class="wrap-wide">
+<section id="servicos" class="py-section">
+  <div class="container-xl">
     <div class="kicker">01 — O que eu faço</div>
-    <div class="sec-title">Cinco frentes conectadas</div>
-    <ul class="list-clean">
-      <li class="list-row">
-        <div class="list-row-num">01</div>
-        <div>
-          <div class="list-row-title">Dashboards e relatórios em Power BI</div>
-          <div class="list-row-desc">Painéis pensados para quem vai usar no dia a dia: supervisores, coordenadores e gerentes que precisam de resposta rápida, não de planilha disfarçada de dashboard.</div>
+    <div class="sec-title mb-4">Cinco frentes conectadas</div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4">
+          <div class="card-body p-0">
+            <i class="bi bi-bar-chart-line fs-4" style="color:var(--electric-2);"></i>
+            <h3 class="fs-6 fw-bold mt-3 mb-2" style="color:var(--ink);">Dashboards em Power BI</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:13.5px; line-height:1.7;">Painéis para o dia a dia de quem decide, não planilha disfarçada de dashboard.</p>
+          </div>
         </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">02</div>
-        <div>
-          <div class="list-row-title">Modelagem de dados e DAX</div>
-          <div class="list-row-desc">Modelo semântico bem estruturado por trás do painel, com medidas DAX otimizadas para performance e manutenção, não fórmulas remendadas.</div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4">
+          <div class="card-body p-0">
+            <i class="bi bi-diagram-3 fs-4" style="color:var(--electric-2);"></i>
+            <h3 class="fs-6 fw-bold mt-3 mb-2" style="color:var(--ink);">Modelagem de dados e DAX</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:13.5px; line-height:1.7;">Modelo semântico estruturado, com medidas DAX otimizadas para performance.</p>
+          </div>
         </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">03</div>
-        <div>
-          <div class="list-row-title">Governança e controle de acesso (RLS)</div>
-          <div class="list-row-desc">Row Level Security por perfil de usuário, garantindo que cada pessoa veja exatamente o que precisa ver, sem expor dado sensível de outras áreas ou regionais.</div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4">
+          <div class="card-body p-0">
+            <i class="bi bi-shield-lock fs-4" style="color:var(--electric-2);"></i>
+            <h3 class="fs-6 fw-bold mt-3 mb-2" style="color:var(--ink);">Governança e acesso (RLS)</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:13.5px; line-height:1.7;">Row Level Security por perfil, sem expor dado sensível entre áreas ou regionais.</p>
+          </div>
         </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">04</div>
-        <div>
-          <div class="list-row-title">Documentação de modelo com IA</div>
-          <div class="list-row-desc">Documentação técnica do modelo semântico gerada com apoio de inteligência artificial, facilitando manutenção futura e onboarding de novos usuários do painel.</div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4">
+          <div class="card-body p-0">
+            <i class="bi bi-file-earmark-text fs-4" style="color:var(--electric-2);"></i>
+            <h3 class="fs-6 fw-bold mt-3 mb-2" style="color:var(--ink);">Documentação com IA</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:13.5px; line-height:1.7;">Documentação técnica gerada com apoio de IA, para manutenção e onboarding mais rápidos.</p>
+          </div>
         </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">05</div>
-        <div>
-          <div class="list-row-title">Tracking e rastreabilidade operacional</div>
-          <div class="list-row-desc">Acompanhamento de indicadores operacionais (SLA, backlog, ordens de produção) com a mesma precisão que venho aplicando há anos em campo, agora traduzida para dados.</div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 p-4">
+          <div class="card-body p-0">
+            <i class="bi bi-geo-alt fs-4" style="color:var(--electric-2);"></i>
+            <h3 class="fs-6 fw-bold mt-3 mb-2" style="color:var(--ink);">Tracking operacional</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:13.5px; line-height:1.7;">Acompanhamento de SLA, backlog e ordens de produção com a precisão que trago do campo.</p>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section-panel">
-  <div class="wrap-wide">
+<section class="py-section bg-panel-section">
+  <div class="container-xl">
     <div class="kicker">02 — Para quem</div>
-    <div class="sec-title">Funciona em três cenários</div>
-    <div class="card-grid-3">
-      <div class="card-bold">
-        <h3>Sem BI estruturado</h3>
-        <p>Você ainda decide com base em planilha solta ou relatório manual. Eu construo a base do zero, com modelo de dados correto desde o início.</p>
+    <div class="sec-title mb-4">Funciona em três cenários</div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card card-hover h-100 p-4">
+          <div class="card-body p-0">
+            <h3 class="card-eyebrow mb-2">Sem BI estruturado</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:14px; line-height:1.75;">Decisão ainda baseada em planilha solta. Construo a base do zero, com modelo de dados correto.</p>
+          </div>
+        </div>
       </div>
-      <div class="card-bold">
-        <h3>Sem governança</h3>
-        <p>O painel existe, mas todo mundo vê tudo. Eu implemento controle de acesso por perfil sem precisar refazer o que já funciona.</p>
+      <div class="col-md-4">
+        <div class="card card-hover h-100 p-4">
+          <div class="card-body p-0">
+            <h3 class="card-eyebrow mb-2">Sem governança</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:14px; line-height:1.75;">O painel existe, mas todo mundo vê tudo. Implemento acesso por perfil sem refazer o que já funciona.</p>
+          </div>
+        </div>
       </div>
-      <div class="card-bold">
-        <h3>Crescimento de usuários</h3>
-        <p>O BI vai escalar para mais times ou regionais e precisa de documentação e estrutura que sustentem esse crescimento sem virar caos.</p>
+      <div class="col-md-4">
+        <div class="card card-hover h-100 p-4">
+          <div class="card-body p-0">
+            <h3 class="card-eyebrow mb-2">Crescimento de usuários</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:14px; line-height:1.75;">O BI vai escalar para mais times ou regionais. Documentação sustenta esse crescimento sem virar caos.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="estudo-de-caso">
-  <div class="wrap-wide">
+<section id="estudo-de-caso" class="py-section">
+  <div class="container-xl">
     <div class="kicker">03 — Estudo de caso</div>
-    <div class="sec-title">Tracking no agro com governança por perfil</div>
-    <div class="body-text">
-      <p>Um caso real, resumido no formato problema, abordagem e resultado, para mostrar como eu aplico BI e tracking na prática, não só no discurso.</p>
-    </div>
+    <div class="sec-title mb-3">Tracking no agro com governança por perfil</div>
+    <p style="max-width:62ch; color:var(--ink-2); font-size:15px; line-height:1.8;">Uma operação nacional de transporte acompanhava notas fiscais e SLA espalhados por várias regionais, em planilhas separadas. Consolidei tudo num painel único em Power BI, com Row Level Security por perfil.</p>
 
-    <div style="margin-top:36px;">
-      <div class="list-row-title" style="color:var(--electric-2); font-family:'Archivo',sans-serif; text-transform:uppercase; font-size:12px; letter-spacing:0.06em; margin-bottom:14px;">O problema</div>
-      <div class="body-text">
-        <p>Uma operação nacional de transporte no segmento agro acompanhava notas fiscais e nível de serviço espalhados por várias regionais, tudo em planilhas separadas e atualizadas na mão. Cada área enxergava um recorte diferente do mesmo dado. O atraso só aparecia depois que o cliente cobrava, e ninguém confiava plenamente no número.</p>
+    <div class="data-panel mt-4">
+      <div class="data-panel-head">Leitura do painel entregue · exemplo ilustrativo</div>
+      <div class="row g-3">
+        <div class="col-6 col-md-3"><div class="kpi-box"><div class="k-num">10.751</div><div class="k-lbl">NF acompanhadas (14 dias)</div></div></div>
+        <div class="col-6 col-md-3"><div class="kpi-box"><div class="k-num">93,3%</div><div class="k-lbl">SLA médio</div></div></div>
+        <div class="col-6 col-md-3"><div class="kpi-box"><div class="k-num">720</div><div class="k-lbl">NF em atraso</div></div></div>
+        <div class="col-6 col-md-3"><div class="kpi-box"><div class="k-num">4</div><div class="k-lbl">Regionais em um só painel</div></div></div>
       </div>
+      <p class="mt-3 mb-0" style="font-size:12px; color:var(--ink-3);">Números ilustrativos, sem dado real de cliente. Veja o painel interativo na demonstração abaixo.</p>
     </div>
 
-    <div style="margin-top:32px;">
-      <div class="list-row-title" style="color:var(--electric-2); font-family:'Archivo',sans-serif; text-transform:uppercase; font-size:12px; letter-spacing:0.06em; margin-bottom:14px;">Como resolvi</div>
-      <ul class="list-clean">
-        <li class="list-row">
-          <div class="list-row-num">01</div>
-          <div>
-            <div class="list-row-title">Modelagem antes do visual</div>
-            <div class="list-row-desc">Estruturei o modelo semântico primeiro, com as tabelas e relações certas, para que a medida de SLA e o tracking de NF fossem confiáveis na origem, não remendados no gráfico.</div>
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="list-row-num">02</div>
-          <div>
-            <div class="list-row-title">Row Level Security por perfil</div>
-            <div class="list-row-desc">Apliquei RLS para que cada usuário abrisse o mesmo painel e visse apenas a sua regional. Um único relatório serve toda a operação, sem cópia manual e sem exposição indevida.</div>
-          </div>
-        </li>
-        <li class="list-row">
-          <div class="list-row-num">03</div>
-          <div>
-            <div class="list-row-title">Documentação do modelo com IA</div>
-            <div class="list-row-desc">Documentei o modelo semântico com apoio de inteligência artificial, o que reduz o tempo de manutenção futura e facilita o onboarding de quem chega depois.</div>
-          </div>
-        </li>
-      </ul>
+    <div class="d-flex flex-wrap gap-2 mt-4">
+      <span class="badge badge-tag rounded-2 px-3 py-2">Power BI</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">RLS</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">Modelo Semântico</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">DAX</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">Agro</span>
     </div>
 
-    <div style="margin-top:32px;">
-      <div class="list-row-title" style="color:var(--electric-2); font-family:'Archivo',sans-serif; text-transform:uppercase; font-size:12px; letter-spacing:0.06em; margin-bottom:14px;">O resultado</div>
-      <div class="body-text">
-        <p>A operação passou a decidir sobre um número único e confiável, com cada perfil vendo o recorte certo. O acompanhamento de NF e SLA deixou de depender de planilha manual e virou rotina dentro do painel.</p>
-      </div>
-      <!-- METRICA REAL: substitua ou adicione um numero que voce consiga sustentar
-           (ex: horas/semana de planilha eliminadas, % de adocao do painel). -->
-      <div class="stat-strip">
-        <div><div class="stat-num">+50</div><div class="stat-label">Usuários ativos</div></div>
-        <div><div class="stat-num">RLS</div><div class="stat-label">Acesso por perfil</div></div>
-        <div><div class="stat-num">1</div><div class="stat-label">Painel para toda a operação</div></div>
-      </div>
-
-      <div class="case-panel">
-        <div class="case-panel-head">Leitura do painel entregue · exemplo ilustrativo</div>
-        <div class="case-kpis">
-          <div class="case-kpi"><div class="k-num">10.751</div><div class="k-lbl">NF acompanhadas (14 dias)</div></div>
-          <div class="case-kpi"><div class="k-num">93,3%</div><div class="k-lbl">SLA médio</div></div>
-          <div class="case-kpi"><div class="k-num">720</div><div class="k-lbl">NF em atraso</div></div>
-          <div class="case-kpi"><div class="k-num">4</div><div class="k-lbl">Regionais em um só painel</div></div>
-        </div>
-        <div class="case-bars">
-          <div class="case-bar-row"><span class="case-bar-name">Sudeste</span><span class="case-bar-track"><span class="case-bar-fill" style="width:96%;"></span></span><span class="case-bar-val">96%</span></div>
-          <div class="case-bar-row"><span class="case-bar-name">Sul</span><span class="case-bar-track"><span class="case-bar-fill" style="width:94%;"></span></span><span class="case-bar-val">94%</span></div>
-          <div class="case-bar-row"><span class="case-bar-name">Centro-Oeste</span><span class="case-bar-track"><span class="case-bar-fill" style="width:92%;"></span></span><span class="case-bar-val">92%</span></div>
-          <div class="case-bar-row"><span class="case-bar-name">Nordeste</span><span class="case-bar-track"><span class="case-bar-fill" style="width:89%;"></span></span><span class="case-bar-val">89%</span></div>
-        </div>
-        <p class="case-note">Números ilustrativos, para representar o tipo de leitura de SLA por regional entregue no projeto. Nenhum dado real de cliente é exposto. Veja o painel interativo na seção de demonstração abaixo.</p>
-      </div>
+    <div class="d-flex flex-wrap gap-3 mt-4">
+      <a href="caso-agro.html" class="btn btn-outline-light"><i class="bi bi-arrow-right me-1"></i>Ver estudo completo</a>
+      <a href="#contato" class="btn btn-primary">Quero algo parecido</a>
     </div>
-
-    <div class="tag-row" style="margin-top:26px;">
-      <span class="tag">Power BI</span>
-      <span class="tag">RLS</span>
-      <span class="tag">Modelo Semântico</span>
-      <span class="tag">DAX</span>
-      <span class="tag">IA</span>
-      <span class="tag">Tracking</span>
-      <span class="tag">Agro</span>
-      <span class="tag">Governança</span>
-    </div>
-
-    <a href="#contato" class="btn-fill" style="margin-top:30px; display:inline-block;">Quero algo parecido</a>
   </div>
 </section>
 
-<section id="dashboard" class="section-panel"><span id="dash" hidden></span>
-  <div class="wrap-wide">
+<section id="dashboard" class="py-section bg-panel-section"><span id="dash" hidden></span>
+  <div class="container-xl">
     <div class="kicker">04 — Demonstração</div>
-    <div class="sec-title">Tracking de NF e SLA ao vivo</div>
-    <p class="body-text" style="max-width:60ch; margin-bottom:8px;"><span>Painel de exemplo construído em código, com dados fictícios, que reproduz a lógica de acompanhamento de notas fiscais e nível de serviço que aplico em projetos reais. Troque a regional e veja os indicadores reagirem.</span></p>
+    <div class="sec-title mb-3">Tracking de NF e SLA ao vivo</div>
+    <p style="max-width:60ch; color:var(--ink-2); font-size:15px; margin-bottom:8px;">Painel de exemplo construído em código, com dados fictícios. Troque a regional e veja os indicadores reagirem.</p>
 
-    <div style="display:flex; align-items:flex-end; gap:16px; margin:22px 0 26px; flex-wrap:wrap;">
-      <div class="field" style="margin:0;">
-        <label>Regional</label>
-        <select id="dashRegional" style="min-width:200px;">
+    <div class="d-flex align-items-end gap-3 flex-wrap my-4">
+      <div>
+        <label class="form-label d-block mb-2">Regional</label>
+        <select id="dashRegional" class="form-select" style="min-width:200px;">
           <option value="Todas" selected>Todas</option>
           <option>Sudeste</option>
           <option>Sul</option>
@@ -241,140 +212,195 @@
           <option>Centro-Oeste</option>
         </select>
       </div>
-      <span class="form-helper" style="padding-bottom:12px;">Dados fictícios para demonstração</span>
+      <span class="form-text">Dados fictícios para demonstração</span>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin-bottom:16px;">
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiTotal">—</div><div class="stat-label">NF emitidas (14 dias)</div></div>
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiSla">—</div><div class="stat-label">SLA médio</div></div>
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiAtraso">—</div><div class="stat-label">NF atrasadas</div></div>
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px 18px;"><div class="stat-num" id="kpiTempo">—</div><div class="stat-label">Tempo médio de ciclo</div></div>
+    <div class="row g-3 mb-3">
+      <div class="col-6 col-md-3"><div class="kpi-box"><div class="k-num" id="kpiTotal">—</div><div class="k-lbl">NF emitidas (14 dias)</div></div></div>
+      <div class="col-6 col-md-3"><div class="kpi-box"><div class="k-num" id="kpiSla">—</div><div class="k-lbl">SLA médio</div></div></div>
+      <div class="col-6 col-md-3"><div class="kpi-box"><div class="k-num" id="kpiAtraso">—</div><div class="k-lbl">NF atrasadas</div></div></div>
+      <div class="col-6 col-md-3"><div class="kpi-box"><div class="k-num" id="kpiTempo">—</div><div class="k-lbl">Tempo médio de ciclo</div></div></div>
     </div>
 
-    <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
-      <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">Volume de NF e SLA por dia</div>
+    <div class="data-panel">
+      <div class="data-panel-head">Volume de NF e SLA por dia</div>
       <div style="position:relative; height:280px;"><canvas id="dashLinha"></canvas></div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:16px;">
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
-        <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">SLA médio por regional</div>
-        <div style="position:relative; height:260px;"><canvas id="dashBarra"></canvas></div>
+    <div class="row g-3 mt-1">
+      <div class="col-md-6">
+        <div class="data-panel h-100">
+          <div class="data-panel-head">SLA médio por regional</div>
+          <div style="position:relative; height:260px;"><canvas id="dashBarra"></canvas></div>
+        </div>
       </div>
-      <div style="background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:22px 20px;">
-        <div style="font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric-2); margin-bottom:16px;">Distribuição por status</div>
-        <div style="position:relative; height:260px;"><canvas id="dashRosca"></canvas></div>
+      <div class="col-md-6">
+        <div class="data-panel h-100">
+          <div class="data-panel-head">Distribuição por status</div>
+          <div style="position:relative; height:260px;"><canvas id="dashRosca"></canvas></div>
+        </div>
       </div>
     </div>
 
-    <p class="form-helper" style="margin-top:18px;">Construído com Chart.js. Nenhum dado real de cliente é utilizado neste exemplo.</p>
+    <p class="form-text mt-3 mb-0">Construído com Chart.js. Nenhum dado real de cliente é utilizado neste exemplo.</p>
   </div>
 </section>
 
-<section id="investimento">
-  <div class="wrap-wide">
+<section id="investimento" class="py-section">
+  <div class="container-xl">
     <div class="kicker">05 — Investimento</div>
-    <div class="sec-title">Como funciona o investimento</div>
-    <p style="font-size:14px; color:var(--ink-3); margin-bottom:8px; max-width:64ch;">Cada projeto tem escopo próprio. O valor depende da complexidade dos dados e do número de usuários, então fecho o orçamento depois de entender o seu caso. O passo de entrada é o diagnóstico, com valor fixo e que você conhece de antemão.</p>
+    <div class="sec-title mb-3">Como funciona o investimento</div>
+    <p style="max-width:64ch; color:var(--ink-2); font-size:14px; margin-bottom:36px;">Cada projeto tem escopo próprio. O valor depende da complexidade dos dados e do número de usuários. O diagnóstico é o passo de entrada, com valor fixo e conhecido de antemão.</p>
 
-    <div class="pkg-row featured">
-      <div>
-        <span class="pkg-badge">Comece por aqui</span>
-        <div class="pkg-name">Diagnóstico</div>
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="price-card is-featured">
+          <span class="badge text-bg-primary" style="background:var(--electric) !important; color:#05070C;">Comece por aqui</span>
+          <div class="price-name">Diagnóstico</div>
+          <ul class="price-list">
+            <li><i class="bi bi-check2"></i>Análise do BI ou processo atual</li>
+            <li><i class="bi bi-check2"></i>Relatório de gaps e riscos</li>
+            <li><i class="bi bi-check2"></i>Recomendação de estrutura ideal</li>
+            <li><i class="bi bi-check2"></i>Base para o orçamento do projeto</li>
+          </ul>
+          <div class="price-value">R$ 450<div class="price-note">valor fixo de entrada</div></div>
+        </div>
       </div>
-      <ul class="pkg-list">
-        <li>Análise do BI ou processo atual</li>
-        <li>Relatório de gaps e riscos</li>
-        <li>Recomendação de estrutura ideal</li>
-        <li>Serve de base para o orçamento do projeto</li>
-      </ul>
-      <div class="pkg-price">R$ 450<span>valor fixo de entrada</span></div>
+      <div class="col-lg-4">
+        <div class="price-card">
+          <div class="price-name mt-0">Dashboard único</div>
+          <ul class="price-list">
+            <li><i class="bi bi-check2"></i>1 dashboard em Power BI</li>
+            <li><i class="bi bi-check2"></i>Modelagem da fonte enviada</li>
+            <li><i class="bi bi-check2"></i>Medidas DAX conforme a necessidade</li>
+            <li><i class="bi bi-check2"></i>Rodada de ajuste incluída</li>
+          </ul>
+          <div class="price-value" style="font-size:16px;">Sob orçamento<div class="price-note">após o diagnóstico</div></div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="price-card">
+          <div class="price-name mt-0">BI corporativo</div>
+          <ul class="price-list">
+            <li><i class="bi bi-check2"></i>Modelagem completa do projeto</li>
+            <li><i class="bi bi-check2"></i>Múltiplos dashboards conectados</li>
+            <li><i class="bi bi-check2"></i>Row Level Security por perfil</li>
+            <li><i class="bi bi-check2"></i>Documentação do modelo semântico</li>
+          </ul>
+          <div class="price-value" style="font-size:16px;">Sob orçamento<div class="price-note">após o diagnóstico</div></div>
+        </div>
+      </div>
     </div>
-    <div class="pkg-row">
-      <div class="pkg-name">Dashboard único</div>
-      <ul class="pkg-list">
-        <li>1 dashboard em Power BI</li>
-        <li>Modelagem de dados da fonte enviada</li>
-        <li>Medidas DAX conforme a necessidade</li>
-        <li>Rodada de ajuste incluída</li>
-      </ul>
-      <div class="pkg-price" style="font-size:16px;">Sob orçamento<span>após o diagnóstico</span></div>
-    </div>
-    <div class="pkg-row">
-      <div class="pkg-name">BI corporativo</div>
-      <ul class="pkg-list">
-        <li>Modelagem completa do projeto</li>
-        <li>Múltiplos dashboards conectados</li>
-        <li>Row Level Security por perfil</li>
-        <li>Documentação do modelo semântico</li>
-        <li>Rodadas de ajuste conforme o escopo</li>
-      </ul>
-      <div class="pkg-price" style="font-size:16px;">Sob orçamento<span>após o diagnóstico</span></div>
-    </div>
-    <p style="font-size:13px; color:var(--ink-3); margin-top:22px; max-width:60ch;">Prefere pular o diagnóstico e já conversar sobre o projeto? Use o formulário abaixo e retorno com os próximos passos.</p>
+    <p style="font-size:13px; color:var(--ink-3); margin-top:24px; max-width:60ch;">Prefere pular o diagnóstico e já conversar sobre o projeto? Use o formulário abaixo.</p>
   </div>
 </section>
 
-<section class="section-panel" id="contato">
-  <div class="wrap-wide">
-    <div class="kicker">06 — Solicitar</div>
-    <div class="sec-title">Conte um pouco sobre seu projeto</div>
-    <p style="font-size:14.5px; color:var(--ink-2); max-width:56ch; margin-bottom:36px;">Preencha o formulário com o máximo de detalhe possível. Retorno em até 1 dia útil com uma proposta ajustada ao seu caso.</p>
+<!-- FAQ: revise as respostas abaixo para refletir seu processo real antes de publicar. -->
+<section id="faq" class="py-section bg-panel-section">
+  <div class="container-xl">
+    <div class="kicker">06 — Dúvidas</div>
+    <div class="sec-title mb-4">Perguntas frequentes</div>
 
-    <form class="bold-form" id="biForm" data-supabase data-tipo="bi">
+    <div class="accordion" style="max-width:760px;" id="faqAccordion">
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Preciso ter licença do Power BI para receber o painel?</button>
+        </h3>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Não. Entrego o arquivo (.pbix) e as instruções de publicação. Se sua empresa ainda não tem workspace no Power BI Service, oriento os primeiros passos.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Como funciona o ajuste depois da entrega?</button>
+        </h3>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">O pacote de dashboard único inclui uma rodada de ajuste após a entrega. Pedidos fora do escopo combinado entram como um novo item de orçamento.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Atendem empresas fora de Campinas/SP?</button>
+        </h3>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Sim. O trabalho é remoto, então atendo empresas de qualquer estado. As reuniões acontecem por chamada de vídeo.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">O diagnóstico é obrigatório antes do projeto?</button>
+        </h3>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Não é obrigatório, mas ajuda quando você ainda não sabe o escopo exato. Se já sabe o que precisa, pode ir direto para o formulário abaixo.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Meus dados ficam seguros?</button>
+        </h3>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Trabalho apenas com os dados enviados para o projeto, dentro do escopo combinado, sem reutilizar ou compartilhar essas informações.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-section" id="contato">
+  <div class="container-xl">
+    <div class="kicker">07 — Solicitar</div>
+    <div class="sec-title mb-3">Conte um pouco sobre seu projeto</div>
+    <p style="max-width:56ch; color:var(--ink-2); font-size:15px; margin-bottom:32px;">Preencha com o máximo de detalhe possível. Retorno em até 1 dia útil com uma proposta ajustada ao seu caso.</p>
+
+    <form class="row g-3" style="max-width:660px;" id="biForm" data-supabase data-tipo="bi">
       <div class="hp-field" aria-hidden="true">
         <label>Não preencha este campo</label>
         <input type="text" name="website" tabindex="-1" autocomplete="off">
       </div>
-      <div class="form-row-2">
-        <div class="field">
-          <label>Nome</label>
-          <input type="text" name="nome" required>
-        </div>
-        <div class="field">
-          <label>E-mail ou telefone</label>
-          <input type="text" name="contato" placeholder="seu@email.com ou (11) 99999-9999" required>
-        </div>
+      <div class="col-md-6">
+        <label class="form-label">Nome</label>
+        <input type="text" name="nome" class="form-control" required>
       </div>
-
-      <div class="form-row-2">
-        <div class="field">
-          <label>Empresa / segmento</label>
-          <input type="text" name="empresa" placeholder="Ex: Indústria, Agro, Transporte...">
-        </div>
-        <div class="field">
-          <label>Serviço de interesse</label>
-          <select name="servico">
-            <option value="dashboard" selected>Dashboard único</option>
-            <option value="bi-corporativo">BI Corporativo completo</option>
-            <option value="diagnostico">Consultoria de diagnóstico</option>
-            <option value="nao-sei">Ainda não sei, quero orientação</option>
-          </select>
-        </div>
+      <div class="col-md-6">
+        <label class="form-label">E-mail ou telefone</label>
+        <input type="text" name="contato" class="form-control" placeholder="seu@email.com ou (11) 99999-9999" required>
       </div>
-
-      <div class="field">
-        <label>Descreva o problema ou objetivo</label>
-        <textarea name="detalhes" placeholder="Ex: temos dados em planilhas separadas e queremos um painel único para a diretoria acompanhar vendas..."></textarea>
+      <div class="col-md-6">
+        <label class="form-label">Empresa / segmento</label>
+        <input type="text" name="empresa" class="form-control" placeholder="Ex: Indústria, Agro, Transporte...">
       </div>
-
-      <div class="form-submit-row">
-        <button type="submit" class="btn-fill" style="border:none; cursor:pointer;">Enviar solicitação</button>
-        <span class="form-helper">Seus dados são usados apenas para retorno deste contato.</span>
+      <div class="col-md-6">
+        <label class="form-label">Serviço de interesse</label>
+        <select name="servico" class="form-select">
+          <option value="dashboard" selected>Dashboard único</option>
+          <option value="bi-corporativo">BI Corporativo completo</option>
+          <option value="diagnostico">Consultoria de diagnóstico</option>
+          <option value="nao-sei">Ainda não sei, quero orientação</option>
+        </select>
       </div>
-
-      <div class="confirm-msg" id="confirmBox">Solicitação recebida. Vou analisar seu projeto e retorno em até 1 dia útil com uma proposta.</div>
+      <div class="col-12">
+        <label class="form-label">Descreva o problema ou objetivo</label>
+        <textarea name="detalhes" class="form-control" rows="4" placeholder="Ex: temos dados em planilhas separadas e queremos um painel único para a diretoria acompanhar vendas..."></textarea>
+      </div>
+      <div class="col-12 d-flex align-items-center gap-3 flex-wrap mt-2">
+        <button type="submit" class="btn btn-primary">Enviar solicitação</button>
+        <span class="form-text mb-0">Seus dados são usados apenas para retorno deste contato.</span>
+      </div>
+      <div class="col-12">
+        <div class="alert d-none confirm-msg" id="confirmBox" style="background:var(--electric-dim); border:1px solid rgba(45,127,255,.3); color:var(--electric-2);">Solicitação recebida. Vou analisar seu projeto e retorno em até 1 dia útil com uma proposta.</div>
+      </div>
     </form>
   </div>
 </section>
 
 <footer class="site-footer">
-  <div class="wrap-wide">
+  <div class="container-xl d-flex justify-content-between align-items-center flex-wrap gap-2">
     <span>© 2026 Caio Teodoro</span>
     <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank">linkedin.com/in/caiobarbosateodoro</a>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
 <script src="dashboard.js" defer></script>
 <script src="app.js" defer></script>

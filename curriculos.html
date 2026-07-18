@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="styles.css">
 
 <!-- ANALYTICS: Microsoft Clarity (gratuito). Descomente e troque SEU_ID_CLARITY.
@@ -38,162 +40,167 @@
 </head>
 <body>
 
-<nav class="topbar">
-  <div class="wrap-wide">
-    <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
-    <div class="nav-search">
-      <input type="text" id="siteSearch" class="nav-search-input" placeholder="Buscar no site" autocomplete="off" aria-label="Buscar no site">
-      <ul class="nav-search-results" id="siteSearchResults"></ul>
-    </div>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
+<nav class="navbar navbar-expand-lg fixed-top navbar-blur border-bottom" style="--bs-border-color:var(--line);">
+  <div class="container-xl">
+    <a href="index.html" class="navbar-brand navbar-brand-mark py-0">Caio Teodoro<span>BI</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menu">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Portfólio</a>
-      <a href="bi.html">BI</a>
-      <a href="curriculos.html" class="is-active">Currículos</a>
-      <a href="bi.html#estudo-de-caso">Estudo de caso</a>
-      <a href="#contato">Contato</a>
+    <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav ms-auto mb-3 mb-lg-0 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Portfólio</a></li>
+        <li class="nav-item"><a class="nav-link" href="bi.html">BI</a></li>
+        <li class="nav-item"><a class="nav-link active" href="curriculos.html">Currículos</a></li>
+        <li class="nav-item"><a class="nav-link" href="caso-agro.html">Estudo de caso</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+      <div class="nav-search-wrap ms-lg-3">
+        <input type="text" id="siteSearch" class="form-control nav-search-input" placeholder="Buscar no site" autocomplete="off" aria-label="Buscar no site">
+        <ul class="nav-search-results" id="siteSearchResults"></ul>
+      </div>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="wrap-wide" style="display:block;">
-    <div class="status-pill"><span class="status-dot"></span>Aceitando novos pedidos</div>
-    <h1 class="hero-title" style="max-width:16ch;">Seu currículo tratado como <em>dado</em></h1>
-    <p class="hero-tagline" style="max-width:520px; font-size:16px; margin-top:20px;">Aplico a lógica que uso em BI e tracking para transformar sua experiência em um currículo claro, sem redundância e estruturado para passar pelos filtros automáticos de recrutamento.</p>
-    <div class="hero-cta">
-      <a href="#contato" class="btn-fill">Solicitar meu currículo</a>
-      <a href="#processo" class="btn-line">Como funciona</a>
+  <div class="container-xl">
+    <span class="status-pill mb-3"><span class="status-dot"></span>Aceitando novos pedidos</span>
+    <h1 class="display-brand mt-2" style="max-width:16ch;">Seu currículo tratado como <em>dado</em></h1>
+    <p class="fs-6 mt-4" style="max-width:520px; color:var(--ink-2); line-height:1.8;">Aplico a lógica que uso em BI e tracking para transformar sua experiência em um currículo claro, estruturado para os filtros automáticos de recrutamento.</p>
+    <div class="d-flex flex-wrap gap-3 mt-4">
+      <a href="#contato" class="btn btn-primary">Solicitar meu currículo</a>
+      <a href="#processo" class="btn btn-outline-light">Como funciona</a>
     </div>
   </div>
 </header>
 
-<section id="processo">
-  <div class="wrap-wide">
+<section id="processo" class="py-section">
+  <div class="container-xl">
     <div class="kicker">01 — Processo</div>
-    <div class="sec-title">Do material bruto ao documento final</div>
-    <ul class="list-clean">
-      <li class="list-row">
-        <div class="list-row-num">01</div>
-        <div>
-          <div class="list-row-title">Levantamento</div>
-          <div class="list-row-desc">Você envia o que já tem: currículo antigo, fotos de certificados, texto solto. Eu identifico o que falta antes de começar a montar.</div>
-        </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">02</div>
-        <div>
-          <div class="list-row-title">Estruturação</div>
-          <div class="list-row-desc">Cada informação entra na seção certa, sem repetição entre resumo, experiência e competências. O que falta fica sinalizado para você confirmar, nunca inventado.</div>
-        </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">03</div>
-        <div>
-          <div class="list-row-title">Adequação a ATS</div>
-          <div class="list-row-desc">Linguagem direta, palavras-chave da vaga e formatação compatível com os principais sistemas de triagem automática de currículos.</div>
-        </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">04</div>
-        <div>
-          <div class="list-row-title">Revisão crítica</div>
-          <div class="list-row-desc">Antes de fechar, simulo a leitura de um recrutador e aponto onde o documento ainda pode ganhar força — geralmente faltam números que comprovem resultado.</div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
+    <div class="sec-title mb-4">Do material bruto ao documento final</div>
 
-<section class="section-panel">
-  <div class="wrap-wide">
-    <div class="kicker">02 — Para quem</div>
-    <div class="sec-title">Funciona em dois cenários</div>
-    <div class="card-grid-2">
-      <div class="card-bold">
-        <h3>Transição ou recolocação</h3>
-        <p>Você tem experiência real, mas o currículo atual não traduz isso em palavras que o sistema de triagem reconhece. Eu organizo o que já existe.</p>
+    <div style="max-width:680px;">
+      <div class="step-row">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Levantamento</div>
+          <div class="step-desc">Você envia o que já tem: currículo antigo, certificados, texto solto. Eu identifico o que falta antes de montar.</div>
+        </div>
       </div>
-      <div class="card-bold">
-        <h3>Crescimento interno</h3>
-        <p>Você busca uma promoção ou mudança de cargo na mesma empresa e precisa de um documento que sustente o próximo nível, não só o histórico.</p>
+      <div class="step-row">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Estruturação</div>
+          <div class="step-desc">Cada informação entra na seção certa, sem repetição. O que falta fica sinalizado para você confirmar, nunca inventado.</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Adequação a ATS</div>
+          <div class="step-desc">Linguagem direta, palavras-chave da vaga e formatação compatível com os principais sistemas de triagem.</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">Revisão crítica</div>
+          <div class="step-desc">Simulo a leitura de um recrutador e aponto onde o documento ganha força, geralmente com números de resultado.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contato">
-  <div class="wrap-wide">
-    <div class="kicker">03 — Solicitar</div>
-    <div class="sec-title">Conte um pouco sobre sua situação</div>
-    <p style="font-size:14.5px; color:var(--ink-2); max-width:56ch; margin-bottom:36px;">Preencha o formulário abaixo com o máximo de detalhe possível. Retorno em até 1 dia útil com os próximos passos e o valor do serviço, que varia conforme a complexidade do seu histórico profissional.</p>
+<section class="py-section bg-panel-section">
+  <div class="container-xl">
+    <div class="kicker">02 — Para quem</div>
+    <div class="sec-title mb-4">Funciona em dois cenários</div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card card-hover h-100 p-4">
+          <div class="card-body p-0">
+            <h3 class="card-eyebrow mb-2">Transição ou recolocação</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:14px; line-height:1.75;">Sua experiência é real, mas o currículo atual não fala a língua do sistema de triagem. Organizo o que já existe.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-hover h-100 p-4">
+          <div class="card-body p-0">
+            <h3 class="card-eyebrow mb-2">Crescimento interno</h3>
+            <p class="mb-0" style="color:var(--ink-2); font-size:14px; line-height:1.75;">Você busca uma promoção ou mudança de cargo e precisa de um documento que sustente o próximo nível.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <form class="bold-form" id="curriculoForm" data-supabase data-tipo="curriculo">
+<section id="contato" class="py-section">
+  <div class="container-xl">
+    <div class="kicker">03 — Solicitar</div>
+    <div class="sec-title mb-3">Conte um pouco sobre sua situação</div>
+    <p style="max-width:56ch; color:var(--ink-2); font-size:15px; margin-bottom:32px;">Preencha com o máximo de detalhe possível. Retorno em até 1 dia útil com os próximos passos e o valor do serviço, que varia conforme a complexidade do seu histórico.</p>
+
+    <form class="row g-3" style="max-width:660px;" id="curriculoForm" data-supabase data-tipo="curriculo">
       <div class="hp-field" aria-hidden="true">
         <label>Não preencha este campo</label>
         <input type="text" name="website" tabindex="-1" autocomplete="off">
       </div>
-      <div class="form-row-2">
-        <div class="field">
-          <label>Nome completo</label>
-          <input type="text" name="nome" required>
-        </div>
-        <div class="field">
-          <label>E-mail ou telefone</label>
-          <input type="text" name="contato" placeholder="seu@email.com ou (11) 99999-9999" required>
-        </div>
+      <div class="col-md-6">
+        <label class="form-label">Nome completo</label>
+        <input type="text" name="nome" class="form-control" required>
       </div>
-
-      <div class="form-row-2">
-        <div class="field">
-          <label>Situação atual</label>
-          <select name="situacao">
-            <option value="recolocacao" selected>Buscando recolocação</option>
-            <option value="promocao">Promoção ou crescimento interno</option>
-            <option value="primeiro-emprego">Primeiro emprego / estágio</option>
-            <option value="mudanca-area">Mudança de área</option>
-            <option value="outro">Outro</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Já tem currículo para enviar?</label>
-          <select name="tem_curriculo">
-            <option value="sim-antigo" selected>Sim, mas está desatualizado</option>
-            <option value="sim-recente">Sim, é recente</option>
-            <option value="nao">Não tenho nenhum ainda</option>
-          </select>
-        </div>
+      <div class="col-md-6">
+        <label class="form-label">E-mail ou telefone</label>
+        <input type="text" name="contato" class="form-control" placeholder="seu@email.com ou (11) 99999-9999" required>
       </div>
-
-      <div class="field">
-        <label>Cargo ou área de interesse</label>
-        <input type="text" name="cargo_interesse" placeholder="Ex: Líder de Produção, Analista de BI, Assistente Administrativo...">
+      <div class="col-md-6">
+        <label class="form-label">Situação atual</label>
+        <select name="situacao" class="form-select">
+          <option value="recolocacao" selected>Buscando recolocação</option>
+          <option value="promocao">Promoção ou crescimento interno</option>
+          <option value="primeiro-emprego">Primeiro emprego / estágio</option>
+          <option value="mudanca-area">Mudança de área</option>
+          <option value="outro">Outro</option>
+        </select>
       </div>
-
-      <div class="field">
-        <label>Conte mais sobre sua experiência e o que você precisa</label>
-        <textarea name="detalhes" placeholder="Ex: tenho 10 anos de experiência na área X, quero algo que destaque liderança..."></textarea>
+      <div class="col-md-6">
+        <label class="form-label">Já tem currículo para enviar?</label>
+        <select name="tem_curriculo" class="form-select">
+          <option value="sim-antigo" selected>Sim, mas está desatualizado</option>
+          <option value="sim-recente">Sim, é recente</option>
+          <option value="nao">Não tenho nenhum ainda</option>
+        </select>
       </div>
-
-      <div class="form-submit-row">
-        <button type="submit" class="btn-fill" style="border:none; cursor:pointer;">Enviar solicitação</button>
-        <span class="form-helper">O valor é informado após a análise da sua solicitação.</span>
+      <div class="col-12">
+        <label class="form-label">Cargo ou área de interesse</label>
+        <input type="text" name="cargo_interesse" class="form-control" placeholder="Ex: Líder de Produção, Analista de BI, Assistente Administrativo...">
       </div>
-
-      <div class="confirm-msg" id="confirmBox">Solicitação recebida. Vou analisar o que você enviou e retorno em até 1 dia útil pelo contato informado, junto com o valor do serviço.</div>
+      <div class="col-12">
+        <label class="form-label">Conte mais sobre sua experiência e o que você precisa</label>
+        <textarea name="detalhes" class="form-control" rows="4" placeholder="Ex: tenho 10 anos de experiência na área X, quero algo que destaque liderança..."></textarea>
+      </div>
+      <div class="col-12 d-flex align-items-center gap-3 flex-wrap mt-2">
+        <button type="submit" class="btn btn-primary">Enviar solicitação</button>
+        <span class="form-text mb-0">O valor é informado após a análise da sua solicitação.</span>
+      </div>
+      <div class="col-12">
+        <div class="alert d-none confirm-msg" id="confirmBox" style="background:var(--electric-dim); border:1px solid rgba(45,127,255,.3); color:var(--electric-2);">Solicitação recebida. Vou analisar o que você enviou e retorno em até 1 dia útil pelo contato informado, junto com o valor do serviço.</div>
+      </div>
     </form>
   </div>
 </section>
 
 <footer class="site-footer">
-  <div class="wrap-wide">
+  <div class="container-xl d-flex justify-content-between align-items-center flex-wrap gap-2">
     <span>© 2026 Caio Teodoro</span>
     <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank">linkedin.com/in/caiobarbosateodoro</a>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js" defer></script>
 </body>
 </html>

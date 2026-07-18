@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="styles.css">
 
 <!-- ANALYTICS: Microsoft Clarity (gratuito). Descomente e troque SEU_ID_CLARITY.
@@ -38,200 +40,159 @@
 </head>
 <body>
 
-<nav class="topbar">
-  <div class="wrap-wide">
-    <a href="index.html" class="brand-mark">Caio Teodoro<span>BI</span></a>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
+<nav class="navbar navbar-expand-lg fixed-top navbar-blur border-bottom" style="--bs-border-color:var(--line);">
+  <div class="container-xl">
+    <a href="index.html" class="navbar-brand navbar-brand-mark py-0">Caio Teodoro<span>BI</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menu">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Portfólio</a>
-      <a href="bi.html">BI</a>
-      <a href="curriculos.html">Currículos</a>
-      <a href="caso-agro.html" class="is-active">Estudo de caso</a>
-      <a href="#contato">Contato</a>
+    <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav ms-auto mb-3 mb-lg-0 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Portfólio</a></li>
+        <li class="nav-item"><a class="nav-link" href="bi.html">BI</a></li>
+        <li class="nav-item"><a class="nav-link" href="curriculos.html">Currículos</a></li>
+        <li class="nav-item"><a class="nav-link active" href="caso-agro.html">Estudo de caso</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+      <div class="nav-search-wrap ms-lg-3">
+        <input type="text" id="siteSearch" class="form-control nav-search-input" placeholder="Buscar no site" autocomplete="off" aria-label="Buscar no site">
+        <ul class="nav-search-results" id="siteSearchResults"></ul>
+      </div>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="wrap-wide" style="display:block;">
-    <div class="status-pill"><span class="status-dot"></span>Estudo de caso · BI corporativo</div>
-    <h1 class="hero-title" style="max-width:18ch;">Tracking no agro com governança por <em>perfil</em></h1>
-    <p class="hero-tagline" style="max-width:560px; font-size:16px; margin-top:20px;">Como transformei um acompanhamento de notas fiscais espalhado em planilha num painel único, com controle de acesso por perfil e adoção por mais de 50 usuários ativos.</p>
-    <div class="hero-cta">
+  <div class="container-xl">
+    <span class="status-pill mb-3"><span class="status-dot"></span>Estudo de caso · BI corporativo</span>
+    <h1 class="display-brand mt-2" style="max-width:18ch;">Tracking no agro com governança por <em>perfil</em></h1>
+    <p class="fs-6 mt-4" style="max-width:560px; color:var(--ink-2); line-height:1.8;">Como transformei um acompanhamento de notas fiscais espalhado em planilha num painel único, com controle de acesso por perfil e adoção por mais de 50 usuários ativos.</p>
+    <div class="d-flex flex-wrap gap-3 mt-4">
       <!-- TROQUE 5519999999999 pelo seu WhatsApp real (DDI 55 + DDD + numero) -->
-      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Caio%2C%20vi%20o%20estudo%20de%20caso%20do%20agro%20e%20quero%20algo%20parecido." target="_blank" rel="noopener" class="btn-fill">Quero algo parecido</a>
-      <a href="bi.html" class="btn-line">Ver serviços de BI</a>
+      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Caio%2C%20vi%20o%20estudo%20de%20caso%20do%20agro%20e%20quero%20algo%20parecido." target="_blank" rel="noopener" class="btn btn-primary">Quero algo parecido</a>
+      <a href="bi.html" class="btn btn-outline-light">Ver serviços de BI</a>
     </div>
   </div>
 </header>
 
-<section id="contexto">
-  <div class="wrap-wide">
+<section id="contexto" class="py-section">
+  <div class="container-xl">
     <div class="kicker">01 — Contexto</div>
-    <div class="sec-title">O ponto de partida</div>
-    <div class="body-text">
-      <p>Uma operação nacional de transporte no segmento agro precisava acompanhar o fluxo de notas fiscais e o nível de serviço espalhado por várias regionais. O acompanhamento vivia em planilhas separadas, atualizadas na mão, e cada área enxergava um recorte diferente da mesma realidade.</p>
-      <p>O resultado prático: o atraso só aparecia depois que o cliente cobrava, e ninguém confiava plenamente no número, porque cada planilha contava uma versão.</p>
-    </div>
+    <div class="sec-title mb-3">O ponto de partida</div>
+    <p style="max-width:66ch; color:var(--ink-2); font-size:15px; line-height:1.85;">Uma operação nacional de transporte no agro acompanhava notas fiscais e SLA espalhados por várias regionais, em planilhas separadas e atualizadas na mão. Cada área via um recorte diferente da mesma realidade: o atraso só aparecia depois que o cliente cobrava, e ninguém confiava plenamente no número.</p>
+
     <!-- Se tiver um numero real da dor inicial (ex: horas/semana gastas em planilha,
-         numero de bases separadas), troque os valores abaixo. Se nao tiver, mantenha
-         os fatos verdadeiros que ja existem. -->
-    <div class="stat-strip">
-      <div><div class="stat-num">4</div><div class="stat-label">Regionais atendidas</div></div>
-      <div><div class="stat-num">Manual</div><div class="stat-label">Processo anterior</div></div>
-      <div><div class="stat-num">Múltiplas</div><div class="stat-label">Fontes desconectadas</div></div>
+         numero de bases separadas), troque os valores abaixo. -->
+    <div class="row mt-4 pt-3 gx-4 gy-3" style="border-top:1px solid var(--line);">
+      <div class="col-6 col-md-4"><div class="stat-num">4</div><div class="stat-label">Regionais atendidas</div></div>
+      <div class="col-6 col-md-4"><div class="stat-num">Manual</div><div class="stat-label">Processo anterior</div></div>
+      <div class="col-6 col-md-4"><div class="stat-num">Múltiplas</div><div class="stat-label">Fontes desconectadas</div></div>
     </div>
   </div>
 </section>
 
-<section class="section-panel" id="desafio">
-  <div class="wrap-wide">
-    <div class="kicker">02 — Desafio</div>
-    <div class="sec-title">O que precisava ser resolvido</div>
-    <ul class="list-clean">
-      <li class="list-row">
-        <div class="list-row-num">01</div>
-        <div>
-          <div class="list-row-title">Uma fonte única de verdade</div>
-          <div class="list-row-desc">Consolidar dados de notas fiscais de regionais diferentes num modelo só, para que supervisão, coordenação e gerência olhassem o mesmo número.</div>
-        </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">02</div>
-        <div>
-          <div class="list-row-title">Cada perfil vendo só o que é dele</div>
-          <div class="list-row-desc">Uma regional não podia enxergar dado sensível de outra. O acesso precisava respeitar a hierarquia sem duplicar painéis nem virar risco de vazamento.</div>
-        </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">03</div>
-        <div>
-          <div class="list-row-title">Sustentar o crescimento</div>
-          <div class="list-row-desc">A base de usuários ia aumentar. O painel precisava ser documentado e estruturado para escalar sem virar caos de manutenção.</div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
+<section id="desafio" class="py-section bg-panel-section">
+  <div class="container-xl">
+    <div class="kicker">02 — Desafio e abordagem</div>
+    <div class="sec-title mb-4">O que precisava ser resolvido, e como resolvi</div>
 
-<section id="solucao">
-  <div class="wrap-wide">
-    <div class="kicker">03 — Abordagem</div>
-    <div class="sec-title">Como eu resolvi</div>
-    <ul class="list-clean">
-      <li class="list-row">
-        <div class="list-row-num">01</div>
-        <div>
-          <div class="list-row-title">Modelagem antes do visual</div>
-          <div class="list-row-desc">Estruturei o modelo semântico primeiro, com as tabelas e relações certas, para que a medida de SLA e o tracking de NF fossem confiáveis na origem, não remendados no gráfico.</div>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="compare-col is-before">
+          <div class="compare-head"><i class="bi bi-x-circle"></i>Antes</div>
+          <div class="compare-item"><i class="bi bi-dash-circle"></i>Cada regional enxergava um recorte diferente do mesmo dado, sem fonte única de verdade.</div>
+          <div class="compare-item"><i class="bi bi-dash-circle"></i>Dar visão ampla a todos os perfis era risco de exposição de dado sensível entre regionais.</div>
+          <div class="compare-item"><i class="bi bi-dash-circle"></i>Sem documentação, o crescimento da base de usuários viraria caos de manutenção.</div>
         </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">02</div>
-        <div>
-          <div class="list-row-title">Row Level Security por perfil</div>
-          <div class="list-row-desc">Apliquei RLS para que cada usuário abrisse o mesmo painel e enxergasse apenas a sua regional. Um único relatório serve toda a operação, sem cópia manual e sem exposição indevida.</div>
+      </div>
+      <div class="col-lg-6">
+        <div class="compare-col is-after">
+          <div class="compare-head"><i class="bi bi-check-circle"></i>Depois</div>
+          <div class="compare-item"><i class="bi bi-check2"></i>Modelo semântico estruturado primeiro, com SLA e tracking de NF confiáveis na origem.</div>
+          <div class="compare-item"><i class="bi bi-check2"></i>Row Level Security por perfil: um único relatório, cada usuário vê só a sua regional.</div>
+          <div class="compare-item"><i class="bi bi-check2"></i>Documentação técnica gerada com apoio de IA, reduzindo manutenção e onboarding.</div>
         </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">03</div>
-        <div>
-          <div class="list-row-title">Documentação do modelo com IA</div>
-          <div class="list-row-desc">Documentei o modelo semântico com apoio de inteligência artificial, o que reduz o tempo de manutenção futura e facilita o onboarding de quem chega depois.</div>
-        </div>
-      </li>
-      <li class="list-row">
-        <div class="list-row-num">04</div>
-        <div>
-          <div class="list-row-title">Painel pensado para quem decide</div>
-          <div class="list-row-desc">KPIs de volume, SLA e status no topo, com leitura em segundos. O objetivo nunca foi mostrar número, foi entregar contexto para a decisão.</div>
-        </div>
-      </li>
-    </ul>
-    <div class="tag-row">
-      <span class="tag">Power BI</span>
-      <span class="tag">RLS</span>
-      <span class="tag">Modelo Semântico</span>
-      <span class="tag">DAX</span>
-      <span class="tag">IA</span>
-      <span class="tag">Tracking</span>
-      <span class="tag">Agro</span>
-      <span class="tag">Governança</span>
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap gap-2 mt-4">
+      <span class="badge badge-tag rounded-2 px-3 py-2">Power BI</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">RLS</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">Modelo Semântico</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">DAX</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">IA</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">Tracking</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">Agro</span>
+      <span class="badge badge-tag rounded-2 px-3 py-2">Governança</span>
     </div>
   </div>
 </section>
 
-<section class="section-panel" id="resultado">
-  <div class="wrap-wide">
-    <div class="kicker">04 — Resultado</div>
-    <div class="sec-title">O que mudou na prática</div>
-    <div class="body-text">
-      <p>A operação passou a decidir sobre um número único e confiável, com cada perfil vendo o recorte certo. O acompanhamento de NF e SLA deixou de depender de planilha manual e virou rotina dentro do painel.</p>
-    </div>
+<section id="resultado" class="py-section">
+  <div class="container-xl">
+    <div class="kicker">03 — Resultado</div>
+    <div class="sec-title mb-3">O que mudou na prática</div>
+    <p style="max-width:66ch; color:var(--ink-2); font-size:15px; line-height:1.85;">A operação passou a decidir sobre um número único e confiável, com cada perfil vendo o recorte certo. NF e SLA deixaram de depender de planilha manual e viraram rotina dentro do painel, com KPIs de volume, SLA e status no topo, pensados para leitura rápida de quem decide.</p>
+
     <!-- METRICAS REAIS: substitua os valores comentados pelos numeros que voce medir.
          Nao publique numero que voce nao consiga sustentar se o cliente perguntar. -->
-    <div class="stat-strip">
-      <div><div class="stat-num">+50</div><div class="stat-label">Usuários ativos</div></div>
-      <div><div class="stat-num">RLS</div><div class="stat-label">Acesso por perfil</div></div>
-      <div><div class="stat-num">1</div><div class="stat-label">Painel para toda a operação</div></div>
-      <!-- Ex. de metrica forte para adicionar quando tiver o dado:
-      <div><div class="stat-num">-X h</div><div class="stat-label">Horas/semana de planilha</div></div>
-      <div><div class="stat-num">+Y%</div><div class="stat-label">Adoção do painel</div></div>
-      -->
+    <div class="row mt-4 pt-3 gx-4 gy-3" style="border-top:1px solid var(--line);">
+      <div class="col-6 col-md-4"><div class="stat-num">+50</div><div class="stat-label">Usuários ativos</div></div>
+      <div class="col-6 col-md-4"><div class="stat-num">RLS</div><div class="stat-label">Acesso por perfil</div></div>
+      <div class="col-6 col-md-4"><div class="stat-num">1</div><div class="stat-label">Painel para toda a operação</div></div>
     </div>
   </div>
 </section>
 
-<section id="contato">
-  <div class="wrap-wide">
-    <div class="kicker">05 — Próximo passo</div>
-    <div class="sec-title">Sua operação tem o mesmo gap?</div>
-    <p class="body-text" style="max-width:56ch; margin-bottom:32px;"><span>Se você ainda acompanha SLA, backlog ou notas por planilha, dá para estruturar algo parecido no seu contexto. Descreva seu desafio e retorno em até 1 dia útil com uma leitura inicial, sem compromisso.</span></p>
+<section id="contato" class="py-section bg-panel-section">
+  <div class="container-xl">
+    <div class="kicker">04 — Próximo passo</div>
+    <div class="sec-title mb-3">Sua operação tem o mesmo gap?</div>
+    <p style="max-width:56ch; color:var(--ink-2); font-size:15px; margin-bottom:32px;">Se você ainda acompanha SLA, backlog ou notas por planilha, dá para estruturar algo parecido no seu contexto. Descreva seu desafio e retorno em até 1 dia útil, sem compromisso.</p>
 
-    <form class="bold-form" id="contatoForm" data-supabase data-tipo="caso-agro">
+    <form class="row g-3" style="max-width:660px;" id="contatoForm" data-supabase data-tipo="caso-agro">
       <div class="hp-field" aria-hidden="true">
         <label>Não preencha este campo</label>
         <input type="text" name="website" tabindex="-1" autocomplete="off">
       </div>
-      <div class="form-row-2">
-        <div class="field">
-          <label>Nome</label>
-          <input type="text" name="nome" required>
-        </div>
-        <div class="field">
-          <label>E-mail ou WhatsApp</label>
-          <input type="text" name="contato" placeholder="seu@email.com ou (11) 99999-9999" required>
-        </div>
+      <div class="col-md-6">
+        <label class="form-label">Nome</label>
+        <input type="text" name="nome" class="form-control" required>
       </div>
-      <div class="field">
-        <label>Qual o seu desafio hoje?</label>
-        <textarea name="detalhes" placeholder="Ex: acompanho SLA de várias regionais em planilhas separadas..."></textarea>
+      <div class="col-md-6">
+        <label class="form-label">E-mail ou WhatsApp</label>
+        <input type="text" name="contato" class="form-control" placeholder="seu@email.com ou (11) 99999-9999" required>
       </div>
-      <div class="form-submit-row">
-        <button type="submit" class="btn-fill" style="border:none; cursor:pointer;">Enviar</button>
-        <span class="form-helper">Seus dados são usados apenas para retorno deste contato.</span>
+      <div class="col-12">
+        <label class="form-label">Qual o seu desafio hoje?</label>
+        <textarea name="detalhes" class="form-control" rows="4" placeholder="Ex: acompanho SLA de várias regionais em planilhas separadas..."></textarea>
       </div>
-      <div class="confirm-msg" id="confirmBox">Recebido. Retorno em até 1 dia útil pelo contato informado.</div>
+      <div class="col-12 d-flex align-items-center gap-3 flex-wrap mt-2">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <span class="form-text mb-0">Seus dados são usados apenas para retorno deste contato.</span>
+      </div>
+      <div class="col-12">
+        <div class="alert d-none confirm-msg" id="confirmBox" style="background:var(--electric-dim); border:1px solid rgba(45,127,255,.3); color:var(--electric-2);">Recebido. Retorno em até 1 dia útil pelo contato informado.</div>
+      </div>
     </form>
 
-    <p class="form-helper" style="margin-top:28px;">Prefere falar direto?</p>
-    <div class="contact-row" style="margin-top:10px; gap:22px; flex-wrap:wrap;">
+    <p class="form-text mt-4 mb-2">Prefere falar direto?</p>
+    <div class="d-flex flex-wrap gap-4">
       <!-- TROQUE 5519999999999 pelo seu WhatsApp real (DDI 55 + DDD + numero) -->
-      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Caio%2C%20vi%20o%20estudo%20de%20caso%20do%20agro." target="_blank" rel="noopener">WhatsApp</a>
-      <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank" rel="noopener">linkedin.com/in/caiobarbosateodoro</a>
+      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%20Caio%2C%20vi%20o%20estudo%20de%20caso%20do%20agro." target="_blank" rel="noopener" class="fw-semibold" style="color:var(--ink); border-bottom:1px solid var(--electric);">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank" rel="noopener" class="fw-semibold" style="color:var(--ink); border-bottom:1px solid var(--electric);">linkedin.com/in/caiobarbosateodoro</a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
-  <div class="wrap-wide">
+  <div class="container-xl d-flex justify-content-between align-items-center flex-wrap gap-2">
     <span>© 2026 Caio Teodoro</span>
     <a href="https://www.linkedin.com/in/caiobarbosateodoro/" target="_blank">linkedin.com/in/caiobarbosateodoro</a>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js" defer></script>
 </body>
 </html>
